@@ -1,0 +1,50 @@
+nav{
+    display: inline-block;
+    width: 100%;
+    height: 6rem;
+    background-color: #000000d8;
+    color: #ffffff;
+  }
+  .nav-inner, .footer-inner{ 
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin: 2% 2%;
+  }
+  .links{
+      font-size: 19px;
+  }
+ a{
+    text-decoration: none;
+    color: white;
+  }
+  .nav-inner>section{
+    display: flex;
+    width: 12%;
+    height: 1.5rem;
+    padding-bottom:1%;
+  }
+  .nav-inner>section:hover{
+    border-bottom: 2px solid var(--green); 
+  }
+  .nav-inner>section>img{
+    width: 14%;
+    height:100%;
+    margin-right: 5%;
+  }
+
+   /* ----Logo */
+  .logo-section{
+    display:flex;
+    margin-top: -1rem;
+  }
+  .logo-section>p{
+    font-family: var(--marmelad);
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+  }
+  .logo-half{
+    color: var(--green);
+  }
+  
+  

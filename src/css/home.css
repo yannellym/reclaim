@@ -1,0 +1,228 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Marmelad&display=swap');
+
+:root{
+  --outline: 2px red solid;
+  --marmelad: 'Marmelad', sans-serif;
+  --navgray: rgba(0, 0, 0, 0.527);
+  --green: rgb(51, 180, 68);
+  --blue: #60B7FF;
+  --footblack: #000000c7;
+}
+
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+
+/* Hero */
+.hero{
+  display: flex;
+  height: 600px;
+  background-color: rgb(240, 240, 240);
+}
+.hero-left{
+  width:50%;
+  padding: 5%;
+  line-height: 2.5;
+}
+.hero-btn{
+  margin: 7% auto;
+  width: 30%;
+}
+.hero-right{
+  width:50%;
+}
+.hero-right>img{
+  width:80%;
+  height: 80%;
+  padding: 7% 10%;
+}
+
+
+
+/* How */
+.how{
+  height: 50rem;
+}
+.how-title{
+  display: flex;
+  width: 20%;
+  margin: 4% auto;
+}
+.recycle-logo{
+  width:4rem;
+  height: 4rem;
+  margin-left: 5%;
+}
+.how-box{
+  width: 90%;
+  height: 40rem;
+  margin: 0 auto;
+  display: flex;
+}
+.how-left, .how-right{
+  width: 50%;
+  height:100%;
+}
+.inner-box-title{
+  margin-left: 43%;
+  width: 23%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  height: 3rem;
+  padding-top:2%;
+  font-size: 30px;
+ 
+}
+.how-left>p{
+  background-color: var(--blue);
+}
+.how-right>p{
+  background-color: var(--green);
+}
+.inner-boxes{
+  margin: 0 auto;
+  width: 70%;
+  height:25%;
+  padding: 2%;
+  display:flex;
+}
+.innerbox-img{
+  width:40%;
+}
+.innerbox-img>img{
+  width:120px;
+  height: 70%;
+  padding-left: 8%;
+  padding-top: 5%;
+}
+.innerbox-desc{
+  width:60%;
+  margin-left: 4px
+}
+.how-right{
+  border-left: 4px black solid;
+}
+
+/* Facts */
+
+.facts{
+  background-color: var(--green);
+  height: 750px;
+}
+.facts-title{
+  display:flex;
+  margin: 0 auto;
+  width: 30%;
+  padding-top: 3%;
+}
+
+.facts-row{
+  display: flex;
+  width:90%;
+  height: 8rem;
+  margin: 4% auto;
+  padding-left: 5%;
+}
+.facts-row>p{
+  background-color: white;
+  width: 70%;
+  border-radius: 25px;
+  padding: 2%;
+  line-height: 1.5;
+  height: 3rem;
+}
+.facts-row>img{
+  padding: 0 2%;
+}
+
+
+/* Goal */
+.goal{
+  height: 700px;
+  display: inline-block;
+  width: 100%;
+}
+.goal-title{
+  display: flex;
+  margin: 2% auto;
+  width: 17%;
+}
+.goal-title>h1{
+  padding-top:2%;
+  font-size: 30px;
+}
+.goal-title>img{
+  width: 5rem;
+
+}
+.goal>p{
+  width: 70%;
+  margin: 0 auto;
+  line-height: 2.5;
+  font-size:19px;
+}
+.goal-circles{
+  display: flex;
+  max-width: 60%;
+  justify-content: space-between;
+  margin: 4% auto;
+  height: 10rem;
+}
+.goal-circles>p{
+  border-radius: 50%;
+  background-color:var(--blue);
+  padding: 3% 2%;
+  text-align: center;
+  line-height: 2;
+  height: 6rem;
+  width:15%;
+  box-shadow: 1px 2px 3px;
+}
+.quantity{
+  font-weight: bold;
+  font-size:20px;
+}
+/* About */
+
+.about{
+  background-color: var(--blue);
+  height: 35rem;
+}
+.about-box{
+  width:80%;
+  height: 90%;
+  margin: 0 auto;
+}
+.about-box>h1{
+  text-align: center;
+  padding-top:2%;
+  font-size: 30px;
+}
+.about-people{
+  width: 60%;
+  margin: 0 auto;
+  display:flex;
+  justify-content: space-between;
+  padding-top: 2%;
+}
+
+.people-box{
+  text-align: center;
+}
+.about-box>p{
+  width: 70%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  line-height: 2;
+  padding: 2%;
+  border-radius: 1rem;
+}
+
+

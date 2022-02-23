@@ -1,0 +1,45 @@
+.likedContainer{
+    height: 100%;
+    display: inline-block;
+    width:100%;
+    background: #B2F6FF;
+    background: -webkit-linear-gradient(top, #B2F6FF, #FEFFF5);
+    background: -moz-linear-gradient(top, #B2F6FF, #FEFFF5);
+    background: linear-gradient(to bottom, #B2F6FF, #FEFFF5);
+}
+.earthContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 57%;
+    padding-top: 3%;
+}
+.earthContainer>p{
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px;
+    font-size: 20px;
+    padding: 3%;
+    background-color: white;
+}
+h1{
+    text-align: center;
+}
+.likedBatches{
+    margin: 0 auto;
+    width:50%;
+}
+.more{
+    margin: 3% auto;
+    width:35%;
+    text-align: center;
+    color: rgb(94, 92, 92);
+}
+#buttonAdd{
+    border-radius: 50%;
+    width:3rem;
+    height:3rem;
+    font-size: 25px;
+}
+.plant{
+    float: right;
+    width:7%;
+}

@@ -1,0 +1,54 @@
+.claimedContainer{
+    height: 100%;
+    display: inline-block;
+    width:100%;
+    background: #FFF4F4;
+    background: -webkit-linear-gradient(top, #FFF4F4, #FCFDE5);
+    background: -moz-linear-gradient(top, #FFF4F4, #FCFDE5);
+    background: linear-gradient(to bottom, #FFF4F4, #FCFDE5);
+}
+.earthcontainer{
+    width: 100%;
+    height: 8rem;
+}
+.earthcontainer-inner{
+    display: flex;
+    float:right;
+    width:50%;
+}
+.earthcontainer-inner>p{
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px;
+    font-size: 20px;
+    padding: 3%;
+    background-color: white;
+}
+.earthcontainer-inner>img{
+    width:12%;
+    height: 12%;
+    padding-left: 3%;
+    padding-top: 3%;
+}
+h1{
+    text-align: center;
+}
+.likedBatches{
+    margin: 0 auto;
+    width:50%;
+}
+.more{
+    margin: 3% auto;
+    width:35%;
+    text-align: center;
+    color: rgb(94, 92, 92);
+}
+#buttonAdd{
+    border-radius: 50%;
+    width:3rem;
+    height:3rem;
+    font-size: 25px;
+}
+.plant{
+    float: right;
+    width:7%;
+}

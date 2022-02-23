@@ -1,0 +1,90 @@
+.logoSearchBox{
+    display: flex;
+    width:80%;
+    height:8rem;
+}
+.world-box{
+    display: flex;
+    width:100%;
+    padding: 2%;
+}
+.world-box>img{
+    height: 4rem;
+    padding-top: 2%;
+}
+.world-box>p{
+    width: 20rem;
+    font-size: 13px;
+    padding:2%;
+    border: 2px solid rgb(145, 143, 143);
+    height: 6rem;
+    border-radius: 10px;
+    line-height: 1.5;
+    box-shadow: 2px 3px 8px;
+}
+.market-box{
+    width: 13%;
+    padding: 0.5% 0 0 5%;
+}
+.market-box>img{
+    width: 80%;
+    height: 70%;
+}
+.search-box{
+    display:flex;
+    flex-wrap: wrap;
+    width: 70%;
+}
+.bar-box{
+    display: flex;
+    width: 70%;
+    height: 20%;
+    margin: 3% 10%;
+}
+.bar-box>input{
+    width: 38rem;
+    height: 2.9rem;
+    border-radius: 10px;
+    border: solid 2px rgb(206, 205, 205);
+}
+.bar-box>button{
+    border: none;
+    background-color: var(--blue);
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    margin-left:1%;
+    box-shadow: 1px 2px 5px rgba(19, 19, 19, 0.664);
+}
+button:hover{
+    background-color: var(--green);
+}
+.categories>section{
+    display:flex;
+    margin: 0% 65px;
+    width: 100%;
+    justify-content: space-between;
+    padding-top:3%;
+}
+.badges{
+    width:48%;
+    margin: 4% 2%;
+    height: 40rem;
+    overflow: scroll;
+}
+.badges::-webkit-scrollbar {
+    display: none;
+}
+.displayedBadge{
+    border: solid 3px rgb(221, 221, 221);
+    width:45%;
+    margin: 4% 2%;
+    height: 40rem;
+    border-radius: 16px;
+}
+.body{
+    display: flex;
+}
