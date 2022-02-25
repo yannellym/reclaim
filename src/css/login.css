@@ -24,11 +24,16 @@
   }
   .login-box{
     margin: 0 auto;
-    max-width: 40%;
+    max-width: 45%;
+    height: 28rem;
     text-align: center;
-    height: 59%;
-    background-color: rgb(243, 243, 243);
-    border-radius: 2rem;
+    box-shadow: 1px 0px 5px var(--green);
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
   }
   .login-box>h2{
     padding-top: 5%;
@@ -41,10 +46,13 @@
     line-height: 4;
   }
   form>input{
-    width:70%;
-    height: 2.5rem;
-    border-radius: 10px;
-    border: 2px solid gray;
+    width: 80%;
+    margin-bottom: 5px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    font-family: 'Inter', sans-serif;
   }
   .login-inputs>input::placeholder{
     padding-left: 1rem;
@@ -56,7 +64,7 @@
     text-decoration:none;
     color: rgb(255, 255, 255);
   }
-  .login-button>p>a{
+  .login-button-bottom>p>a{
     color:var(--green);
     text-decoration: none;
   }

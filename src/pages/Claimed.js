@@ -2,8 +2,7 @@ import MarketNav from "../components/MarketNav"
 import Footer from "../components/Footer"
 import "../css/claimed.css"
 import Badge from "../components/Badge"
-
-
+import React from "react"
 
 
 const Claimed = () => {

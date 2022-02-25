@@ -1,0 +1,53 @@
+.signup-inputs{
+    width: 80%;
+    display: inline-block;
+    height: 13rem;
+    line-height: 4;
+  }
+  form{
+    width:90%;
+    margin: 0 auto;
+  }
+  .info-inputs{
+    width:100%;
+  }
+  .info-inputs>input{
+    width: 95%;
+    margin-bottom: 20px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-family: 'Inter', sans-serif;
+  }
+  .name-inputs{
+    display: flex;
+    width:100%;
+    margin: 0 auto;
+    margin-bottom: 2%;
+  }
+  .name-inputs>input{
+    width: 100%;
+    margin-bottom: 5px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    font-family: 'Inter', sans-serif;
+  }
+  .first-name{ 
+    margin-right:4%;
+  }
+  .signup-button{
+    padding-top: 3%;
+  }
+  .login-unselect>a{ 
+    text-decoration:none;
+    color: rgb(255, 255, 255);
+  }
+  .signup-button>p>a{
+    color:var(--green);
+    text-decoration: none;
+  }
+  input[type="text"],[type="password"]{
+    padding-left:4%;
+  }

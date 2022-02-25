@@ -25,11 +25,15 @@
 .signup-box{
   margin: 0 auto;
   max-width: 45%;
+  height: 32rem;
   text-align: center;
-  height: 65%;
-  background-color: rgb(243, 243, 243);
-  border-radius: 2rem;
   box-shadow: 1px 0px 5px var(--green);
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
 }
 .signup-box>h2{
   padding-top: 5%;
@@ -50,22 +54,28 @@ form{
   width:100%;
 }
 .info-inputs>input{
-  width:94.5%;
-  height: 2.5rem;
-  border-radius: 10px;
-  border: 2px solid gray;
+  width: 100%;
+  margin-bottom: 20px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 5px;
+  font-family: 'Inter', sans-serif;
 }
 .name-inputs{
   display: flex;
-  width:100%;
+  width:9%;
   margin: 0 auto;
   margin-bottom: 2%;
 }
 .name-inputs>input{
-  width:46%;
-  height: 2.5rem;
-  border-radius: 10px;
-  border: 2px solid gray;
+  width: 100%;
+  margin-bottom: 20px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 5px;
+  font-family: 'Inter', sans-serif;
 }
 .first-name{ 
   margin-right:4%;
@@ -77,10 +87,10 @@ form{
   text-decoration:none;
   color: rgb(255, 255, 255);
 }
-.signup-button>p>a{
+.signup-link{
   color:var(--green);
   text-decoration: none;
 }
-input[type="text"],[type="password"]{
+input[type="text"],input[type="password"], input[type="email"]{
   padding-left:4%;
 }

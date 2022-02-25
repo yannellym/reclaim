@@ -1,4 +1,4 @@
-import "../css/button.css"
+import "../css/claimedButton.css"
 import React from "react"
 
 export default function Button(){
@@ -6,8 +6,8 @@ export default function Button(){
         <div>
             <input
                 type="submit"
-                value="Log in"
-                className="login-button">
+                value="Claimed"
+                className="claimed-button">
             </input>
         </div>     
     )

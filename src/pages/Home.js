@@ -2,6 +2,7 @@ import {Link} from "react-router-dom";
 import Nav from "../components/Nav"
 import Footer from "../components/Footer";
 import "../css/home.css"
+import React from "react"
 
 const Home  = () => {
     

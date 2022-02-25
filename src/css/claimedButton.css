@@ -1,0 +1,12 @@
+.claimed-button{
+    background-color: rgb(56, 55, 55);
+    width: 7rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 10px;
+    color: #bdbcbc;
+    font-size: 19px;
+    box-shadow: 0px 2px -1px rgba(19, 19, 19, 0.664);
+    padding-bottom:2%;
+  }
+  

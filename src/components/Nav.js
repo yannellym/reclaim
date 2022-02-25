@@ -1,6 +1,7 @@
 import Button from "./Button"
 import {Link} from "react-router-dom";
 import "../css/homeNav.css"
+import React from "react"
 
 export default function Nav(){
     return(

@@ -3,9 +3,21 @@ import Footer from "../components/Footer"
 import "../css/marketFeed.css"
 import BasicSelect from "../components/BasicSelect"
 import Badge from "../components/Badge"
+import React from "react"
+import Data from "../Data";
+
 
 
 const MarketFeed = () => {
+    const badges = Data.map(item => {
+        return (
+            <Badge
+                key={item.id}
+                item={item}
+            />
+        )
+    })        
+
     return (
         <div className="marketFeed">
             <MarketNav/>
@@ -38,12 +50,7 @@ const MarketFeed = () => {
             </section>
             <section className="body">
                 <section className="badges">
-                    <Badge />
-                    <Badge />
-                    <Badge />
-                    <Badge />
-                    <Badge />
-                    <Badge />
+                    {badges}
                 </section>
                 <section className="displayedBadge">
                     <h1>Hello1</h1>

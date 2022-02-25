@@ -32,6 +32,11 @@ nav{
     height:100%;
     margin-right: 5%;
   }
+  
+  #profileIcon{
+    height: 2rem;
+    vertical-align: text-bottom;
+  }
 
    /* ----Logo */
   .logo-section{

@@ -34,19 +34,3 @@ nav{
     color: var(--green);
   }
   
-  /* ---Button */
-  
-  .btn{
-    background-color: var(--blue);
-    width: 7rem;
-    height: 2.5rem;
-    border: none;
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 15px;
-    box-shadow: 1px 2px 5px rgba(19, 19, 19, 0.664);
-  }
-  .btn:hover{
-    background-color: var(--green);
-  }
-  

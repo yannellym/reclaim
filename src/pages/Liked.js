@@ -1,11 +1,12 @@
 import MarketNav from "../components/MarketNav"
 import Footer from "../components/Footer"
-import Badge from "../components/Badge"
 import "../css/liked.css"
+import React from "react"
 
 
 
-const Liked = () => {
+
+const Liked = (props) => {
     return (
         <div>
             <MarketNav/>
@@ -19,8 +20,7 @@ const Liked = () => {
                 </section>
                 <h1>Claimed Batches</h1>
                 <section className="likedBatches">
-                    <Badge />
-                    <Badge />
+                   
                 </section>
                 <section className="more">
                     <p>

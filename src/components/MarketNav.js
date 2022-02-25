@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 import "../css/marketNav.css"
+import React from "react"
 
 export default function MarketNav(){
     return(
@@ -24,7 +25,10 @@ export default function MarketNav(){
                             <img src="../images/fireIcon.png" alt="fire icon" />
                             <a href="./claimed" className="links">Claimed Batches</a>
                         </section>
-                        <img src="../images/profile.png" alt="trash icon" />
+                        <section>
+                            <img src="../images/profile.png" alt="profile icon" id="profileIcon" />
+                            <a href="./profile" className="links">Profile</a>
+                        </section>
                 </section>
             </nav>
         </div>

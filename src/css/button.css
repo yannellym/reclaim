@@ -1,0 +1,15 @@
+.login-button,.signup-button{
+    background-color: var(--blue);
+    width: 7rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 19px;
+    box-shadow: 1px 2px 5px rgba(19, 19, 19, 0.664);
+    padding-bottom:2%;
+  }
+  .login-button:hover{
+    background-color: var(--green);
+  }
+  
