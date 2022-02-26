@@ -1,6 +1,5 @@
 import MarketNav from "../components/MarketNav"
 import Footer from "../components/Footer"
-import Badge from "../components/Badge"
 import "../css/profile.css"
 import React from "react"
 

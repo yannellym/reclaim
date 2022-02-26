@@ -1,6 +1,5 @@
 import "../css/form.css"
 import React from "react"
-import Button from "../components/Button"
 import {Link} from "react-router-dom";
 
 export default function Form(){

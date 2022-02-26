@@ -1,0 +1,28 @@
+.badge-details{
+    width:80%;
+    margin: 0 auto;
+}
+.img-location>img{
+    width:300px;
+    height: 300px;
+    margin-left: 25%;
+}
+.img-location>section{
+    margin: 0 auto;
+    display: flex;
+    width:30%;
+    height: 20px;
+}
+.img-location>section>p{
+
+    height:100%;
+    display: inline-block;
+}
+.img-location>section>img{
+    display: inline;
+}
+.btn-sec{
+    width:22%;
+    margin: 0 auto;
+    padding-bottom: 3%;
+}

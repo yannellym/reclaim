@@ -80,11 +80,19 @@ button:hover{
 }
 .displayedBadge{
     border: solid 3px rgb(221, 221, 221);
-    width:45%;
-    margin: 4% 2%;
+    width:40%;
+    margin: 4% 1%;
     height: 40rem;
     border-radius: 16px;
 }
 .body{
     display: flex;
+}
+.earth-waiting{
+    width: 70%;
+    padding: 15%;
+    opacity: 0.2;
+}
+.save-title{
+    color: rgb(199, 199, 199);
 }

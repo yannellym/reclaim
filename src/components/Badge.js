@@ -5,11 +5,12 @@ import ClaimedButton from "./ClaimedButton"
 
 export default function Badge(props){
     let [item, setItem] = React.useState(Data)
+    
 
     let badgeAvailability;
-    if (props.item.available == true) {
-        badgeAvailability = "Available"
-    } else if (props.item.available == false) {
+    if (props.item.available === true) {
+        badgeAvailability = "See More"
+    } else if (props.item.available === false) {
         badgeAvailability = "Claimed"
     }
     
@@ -22,6 +23,12 @@ export default function Badge(props){
             }
         })
     }
+
+    function displayDetails(){
+        props.handleDetails(props.item.id)
+    }
+
+    
   return(
         <div className="badge-container">
            <h1>{props.item.title}</h1>
@@ -35,8 +42,8 @@ export default function Badge(props){
                             <img src="../images/location.png" alt="location" />
                             <p>{props.item.location}</p>
                         </div>
-                        {badgeAvailability === "Available"? 
-                        <div className="badge-button"><button>{badgeAvailability}</button></div> 
+                        {badgeAvailability === "See More"? 
+                        <div className="badge-button"><button  onClick={displayDetails}>{badgeAvailability}</button></div> 
                         : 
                         <div><ClaimedButton>{badgeAvailability}</ClaimedButton></div>}
 
@@ -48,6 +55,7 @@ export default function Badge(props){
                    <img 
                     src={`../images/${heartIcon}`}
                     onClick={toggleLiked}
+                    alt="heart icon"
                     />
                </div>
            </section>

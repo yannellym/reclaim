@@ -5,19 +5,34 @@ import BasicSelect from "../components/BasicSelect"
 import Badge from "../components/Badge"
 import React from "react"
 import Data from "../Data";
+import BadgeDetails from "../components/BadgeDetails"
 
 
 
 const MarketFeed = () => {
-    const badges = Data.map(item => {
+    let [currentBatch, setCurrentBatch] = React.useState({ 
+        batches: [],
+        currBatch:null,
+        showComponent: true,
+        newBatch: {},
+    })
+
+    const batchRecord = Data.map((item)=> {
         return (
             <Badge
                 key={item.id}
                 item={item}
+                handleDetails={handleDetails}
             />
         )
-    })        
+    })      
 
+   function handleDetails (badgekey){
+      return  setCurrentBatch({currBatch: badgekey, showComponent: true})
+}
+
+
+    
     return (
         <div className="marketFeed">
             <MarketNav/>
@@ -50,10 +65,14 @@ const MarketFeed = () => {
             </section>
             <section className="body">
                 <section className="badges">
-                    {badges}
+                    {batchRecord}
                 </section>
                 <section className="displayedBadge">
-                    <h1>Hello1</h1>
+                {
+                        currentBatch.showComponent? <BadgeDetails {...Data.find(item => item.id === currentBatch.currBatch )}> </BadgeDetails>
+                    : 
+                        <div><img src="../images/earth.png" alt="earth" className="earth-waiting" /><h1 className="save-title">Thank you for helping to save the earth!</h1></div> 
+                }
                 </section>
             </section>
             <Footer />
