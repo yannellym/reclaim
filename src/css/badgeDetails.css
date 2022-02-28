@@ -1,28 +1,93 @@
 .badge-details{
-    width:80%;
-    margin: 0 auto;
+    width:100%;
+    height: 60rem;
+    background-color: #eff8f1;
 }
+.badge-details>h1{
+    margin-top:0;
+    padding-top:3%;
+}
+
+/* Image and location */
+
 .img-location>img{
     width:300px;
     height: 300px;
-    margin-left: 25%;
+    margin-left: 23%;
 }
 .img-location>section{
-    margin: 0 auto;
+    margin: 2% auto;
     display: flex;
     width:30%;
     height: 20px;
 }
 .img-location>section>p{
+    margin-top: 2%;
+    padding-left: 2%;
+}
 
-    height:100%;
-    display: inline-block;
+
+/* Description */
+
+.description{
+    width: 70%;
+    margin: 0 auto;
 }
-.img-location>section>img{
-    display: inline;
+.description>section>p{
+    line-height:1.5;
 }
+
+/* Button */
+
 .btn-sec{
-    width:22%;
+    width:21%;
     margin: 0 auto;
     padding-bottom: 3%;
+}
+
+/* Pick up  */
+
+.info-pickup{
+    width: 85%;
+    margin: 0 auto;
+}
+.info-pickup>h4{
+    text-align: center;
+    color: red;
+}
+.pickup-containers{
+    display: flex;
+}
+.left-pickup{
+    width: 20%;
+}
+.right-pickup{
+    width: 78%;
+    padding-left:2%;
+}
+.right-pickup-first{
+    display:flex;
+    height: 20px;
+    width: 90%;
+}
+.right-pickup-first>p{
+    display:inline;
+    vertical-align: bottom;
+    margin-top:0;
+    margin-left:10px;
+}
+.right-pickup-second{
+    line-height: 2;
+    margin: 20px 0 0 10px;
+}
+.info-pickup>p{
+    margin: 2% auto;
+    color: #808080;
+    border-bottom: 1px solid #808080;
+    width: 25%;
+    font-size: 13px;
+    padding-top: 6%;
+}
+.info-pickup>p:hover{
+    color: red;
 }

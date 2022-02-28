@@ -75,22 +75,23 @@ button:hover{
     height: 40rem;
     overflow: scroll;
 }
-.badges::-webkit-scrollbar {
+.badges::-webkit-scrollbar, .displayedBadge::-webkit-scrollbar {
     display: none;
 }
 .displayedBadge{
     border: solid 3px rgb(221, 221, 221);
-    width:40%;
-    margin: 4% 1%;
+    width:35%;
+    margin: 4% 3%;
     height: 40rem;
     border-radius: 16px;
+    overflow: scroll;
 }
 .body{
     display: flex;
 }
 .earth-waiting{
     width: 70%;
-    padding: 15%;
+    padding: 2% 15%;
     opacity: 0.2;
 }
 .save-title{

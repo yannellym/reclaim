@@ -48,7 +48,7 @@
     width: 50%;
     margin-left: 2%;
 }
-.badge-right>img{
+.badge-right>p{
     float: right;
 }
 button{
@@ -65,3 +65,11 @@ button{
     background-color: red;
   }
   
+ .heart{
+     height:30px;
+     margin-top: -40px;
+     width:70px;
+     float: right;
+ }
+ 
+ 

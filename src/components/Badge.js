@@ -1,11 +1,11 @@
 import "../css/badge.css"
 import React from "react"
-import Data from "../Data"
 import ClaimedButton from "./ClaimedButton"
+import Heart from "react-animated-heart";
 
 export default function Badge(props){
-    let [item, setItem] = React.useState(Data)
-    
+    let [hearted, setIsLiked] = React.useState(props.item.liked)
+    const [isClick, setClick] = React.useState(false);
 
     let badgeAvailability;
     if (props.item.available === true) {
@@ -14,18 +14,19 @@ export default function Badge(props){
         badgeAvailability = "Claimed"
     }
     
-    let heartIcon = item.liked? "heartfilled.png": "heart.png"
+    let heartIcon = hearted? "heartfilled.png": "heart.png"
 
     function toggleLiked(){
-        setItem(prevItems => {
-            return {
-                ...prevItems, liked: !prevItems.liked
-            }
-        })
+        setIsLiked(!hearted)
     }
 
     function displayDetails(){
         props.handleDetails(props.item.id)
+    }
+    function hearts(){setClick(!isClick)};
+    function state(){
+        toggleLiked();
+        hearts();
     }
 
     
@@ -52,12 +53,17 @@ export default function Badge(props){
                         <h4>Description</h4>
                         <p>{props.item.description}</p>
                     </section>
-                   <img 
+                   {/* <img 
                     src={`../images/${heartIcon}`}
                     onClick={toggleLiked}
                     alt="heart icon"
-                    />
+                    /> */}
+                    <section className="heart">
+                         <Heart isClick={isClick} onClick={state} />
+                    </section>
+                    
                </div>
+
            </section>
         </div>     
     )

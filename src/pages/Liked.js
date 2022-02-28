@@ -20,7 +20,7 @@ const Liked = (props) => {
                 </section>
                 <h1>Claimed Batches</h1>
                 <section className="likedBatches">
-                   
+                  
                 </section>
                 <section className="more">
                     <p>

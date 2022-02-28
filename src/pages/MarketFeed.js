@@ -7,13 +7,11 @@ import React from "react"
 import Data from "../Data";
 import BadgeDetails from "../components/BadgeDetails"
 
-
-
 const MarketFeed = () => {
     let [currentBatch, setCurrentBatch] = React.useState({ 
-        batches: [],
+        batches: Data,
         currBatch:null,
-        showComponent: true,
+        showComponent: false,
         newBatch: {},
     })
 
@@ -26,13 +24,10 @@ const MarketFeed = () => {
             />
         )
     })      
-
-   function handleDetails (badgekey){
+   function handleDetails(badgekey){
       return  setCurrentBatch({currBatch: badgekey, showComponent: true})
-}
-
-
-    
+    }
+   
     return (
         <div className="marketFeed">
             <MarketNav/>
