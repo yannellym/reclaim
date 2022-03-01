@@ -1,16 +1,32 @@
 import "../css/badgeDetails.css"
-import React from "react"
+import React, { useState }from "react"
 import JSConfetti from 'js-confetti'
-
+import ClaimedButton from "./ClaimedButton"
+import { collection, addDoc, getDocs, doc, updateDoc } from 'firebase/firestore'
+import { database } from "../pages/firebaseConfig"
 
 
 export default function BadgeDetails(props){
 
-let [claimed, setIsClaimed] = React.useState(props.isClaimed);
+    // updating Data
+
+const [claimed, setClaimed] = useState(false)
+const batchesCollectionRef = collection(database, "batches")
+let [batchClaimed, setBatchClaimed] = useState(props.isClaimed);
+
+const handleClaim = async (id, isClaimed) =>{
+    const batchDoc = doc(database, "batches", id)
+    const newClaim = {isClaimed: !isClaimed}
+    await updateDoc(batchDoc, newClaim)
+}
+
+
 
 function showPickUpDetails(){
     celebration();
     showPickUp();
+    claimStatus()
+    
 }
 
 const jsConfetti = new JSConfetti()
@@ -21,13 +37,19 @@ let celebration = () => {
 }
 
 function showPickUp(){
-    setIsClaimed(!claimed)
+    setBatchClaimed(!batchClaimed)
 }
 
 function cancel(){
-    setIsClaimed(!claimed)
+    setBatchClaimed(!batchClaimed)
 }
-    
+
+function claimStatus(){
+    handleClaim(props.id, props.isClaimed)
+}
+
+
+
   return(
         <div className="badge-details">
            <h1>{props.title}</h1>
@@ -45,10 +67,10 @@ function cancel(){
                 </section>
             </section>
             <section className="btn-sec">
-                <button onClick={showPickUpDetails}>CLAIM</button>
+                {batchClaimed? <ClaimedButton /> :<button onClick={showPickUpDetails}>CLAIM</button>}
             </section>
             
-             {claimed ?
+             {batchClaimed?
             <section className="info-pickup">
             <hr/>
                 <h4>INFORMATION FOR PICK UP</h4>
@@ -69,7 +91,7 @@ function cancel(){
                     <p onClick={cancel}>CANCEL PICK UP</p>
             </section>
             :
-            console.log("oh no!")
+            <h1>You pick up information will display here</h1>
             }
         </div>     
     )

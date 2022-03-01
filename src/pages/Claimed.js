@@ -1,7 +1,7 @@
 import MarketNav from "../components/MarketNav"
 import Footer from "../components/Footer"
 import "../css/claimed.css"
-import Badge from "../components/Badge"
+import {Link} from "react-router-dom";
 import React from "react"
 
 
@@ -21,14 +21,14 @@ const Claimed = () => {
             </section>
             <h1>Claimed Batches</h1>
             <section className="likedBatches">
-                <Badge />
+               
             </section>
             <section className="more">
                 <p>
                     Want more batches? click the “+” button 
                     below and be redirected to MarketFeed.
                 </p>
-                <button id="buttonAdd">+</button>
+                <Link to='/marketfeed'><button id="buttonAdd">+</button></Link>
             </section>
             <img src="../images/plant.png" alt="plant logo" className="plant" />
         </section>

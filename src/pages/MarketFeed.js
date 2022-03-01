@@ -3,31 +3,51 @@ import Footer from "../components/Footer"
 import "../css/marketFeed.css"
 import BasicSelect from "../components/BasicSelect"
 import Badge from "../components/Badge"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Data from "../Data";
-import BadgeDetails from "../components/BadgeDetails"
+import BadgeDetails from "../components/BadgeDetails" 
+import { collection, addDoc, getDocs, doc, setDoc } from 'firebase/firestore'
+import { database } from "./firebaseConfig"
 
 const MarketFeed = () => {
-    let [currentBatch, setCurrentBatch] = React.useState({ 
-        batches: Data,
+
+    const [details, setDetails] = useState([]);
+
+    const getData = async () =>{
+        const batchesCol = collection(database, 'batches');
+        const batchesSnapshot = await getDocs(batchesCol);
+        const batchesList = batchesSnapshot.docs.map((doc) => (
+            {...doc.data(), id: doc.id,
+        }));
+        setDetails(batchesList);
+    }
+    console.log(details)
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+    let batchRecords = details.map((item) => {
+        return <Badge
+                    key={item.id}
+                    id={item.id}
+                    item={item}
+                    handleDetails={handleDetails}
+                    
+                />            
+    })
+   
+    let [currentBatch, setCurrentBatch] = useState({ 
+        batches: [],
         currBatch:null,
         showComponent: false,
-        newBatch: {},
     })
 
-    const batchRecord = Data.map((item)=> {
-        return (
-            <Badge
-                key={item.id}
-                item={item}
-                handleDetails={handleDetails}
-            />
-        )
-    })      
-   function handleDetails(badgekey){
-      return  setCurrentBatch({currBatch: badgekey, showComponent: true})
+    function handleDetails(badgekey){
+        return setCurrentBatch({currBatch: badgekey, showComponent: true})
     }
-   
+    
+
     return (
         <div className="marketFeed">
             <MarketNav/>
@@ -44,6 +64,7 @@ const MarketFeed = () => {
                     <div className="categories">
                         <section>
                             <BasicSelect />
+
                         </section>
                     </div>
                 </div>
@@ -60,11 +81,11 @@ const MarketFeed = () => {
             </section>
             <section className="body">
                 <section className="badges">
-                    {batchRecord}
+                    {batchRecords}
                 </section>
                 <section className="displayedBadge">
                 {
-                        currentBatch.showComponent? <BadgeDetails {...Data.find(item => item.id === currentBatch.currBatch )}> </BadgeDetails>
+                        currentBatch.showComponent? <BadgeDetails {...details.find(item=> item.id === currentBatch.currBatch )}> </BadgeDetails>
                     : 
                         <div><img src="../images/earth.png" alt="earth" className="earth-waiting" /><h1 className="save-title">Thank you for helping to save the earth!</h1></div> 
                 }

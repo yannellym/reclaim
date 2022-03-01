@@ -3,20 +3,35 @@ import Nav from "../components/Nav"
 import Footer from "../components/Footer";
 import "../css/login.css"
 import React from "react"
+import { app, database } from "../pages/firebaseConfig"
+import { getAuth, signInWithEmailAndPassword} from "firebase/auth"
 
 
 const Login = () => {
-    const [loginData, setLoginData] = React.useState(
-        {
-            email: "", 
-            password:"", 
-        }
-    )
 
-    function handleSubmit(event){
-        event.preventDefault()
-        console.log(loginData)
+    const [data, setData] = React.useState({
+        firstname: "",
+        lastname: "",
+        email: "",
+        password:""
+    })
+
+    const auth = getAuth();
+    const handleInputs = (e) => {
+        let inputs ={[e.target.name] : e.target.value}
+        setData({...data, ...inputs})
     }
+    const handleSubmit = () =>{
+        signInWithEmailAndPassword(auth, data.email, data.password)
+        .then((response) => {
+           console.log(response.user) 
+        })
+        .catch((err) => {
+            alert(err.message)
+        })
+    }
+    
+
     return (
         <div>
             <Nav />
@@ -28,18 +43,18 @@ const Login = () => {
                 <section className="login-box">
                     <h2>Welcome Back!</h2>
                     <p>Sign in to get started!</p>
-                    <form onSubmit={handleSubmit}> 
+                    <form> 
                         <input
                             type="email"
                             placeholder="Email"
                             name="email"
-                            value={loginData.email}
+                            onChange={event => handleInputs(event)}
                         />
                         <input 
                             type="password"
                             placeholder="Password"
                             name="password"
-                            value={loginData.password}
+                            onChange={event => handleInputs(event)}
                         />
                         <Link to='/marketfeed'> 
                             <div>
@@ -47,6 +62,7 @@ const Login = () => {
                                 type="submit"
                                 value="Log in"
                                 className="login-button"
+                                onClick={handleSubmit}
                                 >
                             </input>
                             </div>

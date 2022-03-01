@@ -1,30 +1,31 @@
 import "../css/form.css"
 import React from "react"
 import {Link} from "react-router-dom";
+import { useState } from "react"
+import { app, database } from "../pages/firebaseConfig"
+import { getAuth, createUserWithEmailAndPassword} from "firebase/auth"
 
 export default function Form(){
-    const [formData, setFormData] = React.useState(
-        {
-            firstName: "", 
-            lastName: "", 
-            email: "", 
-            password:"",
-            is18: true
-        }
-    )
-    
-    function handleChange(event) {
-        const {name, value, type, checked} = event.target
-        setFormData(prevFormData => {
-            return {
-                ...prevFormData,
-                [name]: type === "checkbox" ? checked : value
-            }
-        })
+
+    const [data, setData] = useState({
+        firstname: "",
+        lastname: "",
+        email: "",
+        password:""
+    })
+   const auth = getAuth();
+    const handleInputs = (e) => {
+        let inputs ={[e.target.name] : e.target.value}
+        setData({...data, ...inputs})
     }
-    function handleSubmit(event){
-        event.preventDefault()
-        console.log(formData)
+    const handleSubmit = () => {
+        createUserWithEmailAndPassword(auth, data.email, data.password)
+        .then((response) => {
+           console.log(response.user) 
+        })
+        .catch((err) => {
+            alert(err.message)
+        })
     }
     
     return(
@@ -42,46 +43,42 @@ export default function Form(){
                         <input 
                             type="text"
                             placeholder="First Name"
-                            onChange={handleChange}
-                            name="firstName"
-                            value={formData.firstName} 
+                            onChange={event => handleInputs(event)}
+                            name="firstname"
                             className="first-name"
                         />
                         <input 
                             type="text"
                             placeholder="Last Name"
-                            onChange={handleChange}
-                            name="lastName"
-                            value={formData.lastName}
+                            name="lastname"
+                            onChange={event => handleInputs(event)}
                         />
                     </section>
                     <section className="info-inputs">
                     <input
                         type="email"
                         placeholder="Email"
-                        onChange={handleChange}
                         name="email"
-                        value={formData.email}
+                        onChange={event => handleInputs(event)}
                     />
                         <input 
                             type="password"
                             placeholder="Password"
-                            onChange={handleChange}
                             name="password"
-                            value={formData.password}
+                            onChange={event => handleInputs(event)}
                         />
                     </section>
                     <section className="radio">
                     <input 
                         type="checkbox" 
                         id="is18" 
-                        checked={formData.is18}
-                        onChange={handleChange}
+                        // checked={formData.is18}
+                        onChange={event => handleInputs(event)}
                         name="is18"
                     />
                     <label htmlFor="is18">Are you 18 or older ?</label>
                     </section>
-                    <Link to='/marketfeed'> <button>Sign up</button></Link>
+                    <Link to='/marketfeed'> <button onClick={handleSubmit}>Sign up</button></Link>
                 </form>
             </section>
             <section>

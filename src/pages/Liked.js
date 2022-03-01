@@ -2,6 +2,8 @@ import MarketNav from "../components/MarketNav"
 import Footer from "../components/Footer"
 import "../css/liked.css"
 import React from "react"
+import {Link} from "react-router-dom";
+import Badge from "../components/Badge"
 
 
 
@@ -18,16 +20,16 @@ const Liked = (props) => {
                         helping to save <br/> the world one recycle at a time!
                     </p>
                 </section>
-                <h1>Claimed Batches</h1>
+                <h1>Liked Batches</h1>
                 <section className="likedBatches">
-                  
+                {/* {<Badge {...props.details.find(item=> item.liked === true)} />} */}
                 </section>
                 <section className="more">
                     <p>
                         Want more batches? click the “+” button 
                         below and be redirected to MarketFeed.
                     </p>
-                    <button id="buttonAdd">+</button>
+                    <Link to='/marketfeed'><button id="buttonAdd">+</button></Link>
                 </section>
                 <img src="../images/plant.png" alt="plant logo" className="plant" />
             </section>

@@ -26,6 +26,10 @@ export default function MarketNav(){
                             <a href="./claimed" className="links">Claimed Batches</a>
                         </section>
                         <section>
+                            <img src="../images/fireIcon.png" alt="fire icon" />
+                            <a href="./addbatch" className="links">Add Batch</a>
+                        </section>
+                        <section>
                             <img src="../images/profile.png" alt="profile icon" id="profileIcon" />
                             <a href="./profile" className="links">Profile</a>
                         </section>
