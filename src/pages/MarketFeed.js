@@ -2,15 +2,19 @@ import MarketNav from "../components/MarketNav"
 import Footer from "../components/Footer"
 import "../css/marketFeed.css"
 import BasicSelect from "../components/BasicSelect"
-import Badge from "../components/Badge"
+import Batch from "../components/Batch"
 import React, { useEffect, useState } from "react"
-import Data from "../Data";
-import BadgeDetails from "../components/BadgeDetails" 
-import { collection, addDoc, getDocs, doc, setDoc } from 'firebase/firestore'
+import BatchDetails from "../components/BatchDetails" 
+import { collection, getDocs } from 'firebase/firestore'
 import { database } from "./firebaseConfig"
 
 const MarketFeed = () => {
-
+    let [currentBatch, setCurrentBatch] = useState({ 
+        batches: [],
+        currBatch:null,
+        showComponent: false,
+    })
+    
     const [details, setDetails] = useState([]);
 
     const getData = async () =>{
@@ -28,19 +32,14 @@ const MarketFeed = () => {
     }, []);
 
     let batchRecords = details.map((item) => {
-        return <Badge
-                    key={item.id}
-                    id={item.id}
-                    item={item}
-                    handleDetails={handleDetails}
-                    
-                />            
-    })
-   
-    let [currentBatch, setCurrentBatch] = useState({ 
-        batches: [],
-        currBatch:null,
-        showComponent: false,
+        return (
+            <Batch
+                key={item.id}
+                id={item.id}
+                item={item}
+                handleDetails={handleDetails}  
+            />  
+        )         
     })
 
     function handleDetails(badgekey){
@@ -85,7 +84,7 @@ const MarketFeed = () => {
                 </section>
                 <section className="displayedBadge">
                 {
-                        currentBatch.showComponent? <BadgeDetails {...details.find(item=> item.id === currentBatch.currBatch )}> </BadgeDetails>
+                        currentBatch.showComponent? <BatchDetails {...details.find(item=> item.id === currentBatch.currBatch )}> </BatchDetails>
                     : 
                         <div><img src="../images/earth.png" alt="earth" className="earth-waiting" /><h1 className="save-title">Thank you for helping to save the earth!</h1></div> 
                 }

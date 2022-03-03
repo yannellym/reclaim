@@ -3,7 +3,6 @@ import Footer from "../components/Footer"
 import "../css/liked.css"
 import React from "react"
 import {Link} from "react-router-dom";
-import Badge from "../components/Badge"
 
 
 
@@ -22,7 +21,7 @@ const Liked = (props) => {
                 </section>
                 <h1>Liked Batches</h1>
                 <section className="likedBatches">
-                {/* {<Badge {...props.details.find(item=> item.liked === true)} />} */}
+                {/* {<Batch {...props.details.find(item=> item.liked === true)} />} */}
                 </section>
                 <section className="more">
                     <p>

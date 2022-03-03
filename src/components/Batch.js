@@ -1,46 +1,42 @@
 import "../css/badge.css"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import ClaimedButton from "./ClaimedButton"
-import Heart from "react-animated-heart";
-import { collection, addDoc, getDocs, doc, updateDoc } from 'firebase/firestore'
+import { collection, doc, updateDoc } from 'firebase/firestore'
 import { database } from "../pages/firebaseConfig"
 
 export default function Badge(props){
-    let [hearted, setHearted] = React.useState(props.item.liked)
-    const [isClick, setClick] = useState(props.item.liked);
-    // const [claimed, setClaimed] = useState(false)
+    const [hearted, setHearted] = useState(props.item.liked)
     const batchesCollectionRef = collection(database, "batches")
+
+    let availableMessage;
 
     let badgeAvailability;
     if (props.item.available === true) {
         badgeAvailability = "See More"
     } else if (props.item.available === false) {
-        badgeAvailability = "claimed"
+        badgeAvailability = "Claimed"
     }
 
     function displayDetails(){
         props.handleDetails(props.item.id)
     }
 
-    
-    function hearts(){props.item.liked=!props.item.liked};
-    
-    function state(){
-        toggleLiked();
-        hearts();
-        like(props.item.id, props.item.liked)
+    let heartIcon = hearted? "heartfilled.png": "heart.png"
+
+    function toggleLiked(){
+        setHearted(prevItem => !prevItem)
+        like(props.item.id, !hearted)
     }
 
     const like = async (id, liked) =>{
         const batchDoc = doc(database, "batches", id)
-        const newLike = {liked: !liked}
+        const newLike = {liked: liked}
         await updateDoc(batchDoc, newLike)
     }
-    let heartIcon = props.item.liked? "heartfilled.png": "heart.png"
 
-    function toggleLiked(){
-        setHearted(prevItem => !prevItem.liked)
-    }
+
+    
+
   return(
         <div className="badge-container">
            <h1>{props.item.title}</h1>
@@ -69,7 +65,7 @@ export default function Badge(props){
                         <p>{props.item.description}</p>
                     </section>
                     <section className="heart">
-                         <img src={`../images/${heartIcon}`} onClick={state} alt="heart icon"/>
+                         <img src={`../images/${heartIcon}`} onClick={toggleLiked} alt="heart icon"/>
                     </section>
                     
                </div>

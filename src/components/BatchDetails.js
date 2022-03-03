@@ -1,8 +1,8 @@
 import "../css/badgeDetails.css"
-import React, { useState }from "react"
+import React, { useEffect, useState }from "react"
 import JSConfetti from 'js-confetti'
 import ClaimedButton from "./ClaimedButton"
-import { collection, addDoc, getDocs, doc, updateDoc } from 'firebase/firestore'
+import { collection, doc, updateDoc } from 'firebase/firestore'
 import { database } from "../pages/firebaseConfig"
 
 
@@ -11,6 +11,7 @@ export default function BadgeDetails(props){
     // updating Data
 
 const [claimed, setClaimed] = useState(false)
+const [availability, setAvailability] = useState(true)
 const batchesCollectionRef = collection(database, "batches")
 let [batchClaimed, setBatchClaimed] = useState(props.isClaimed);
 
@@ -20,13 +21,16 @@ const handleClaim = async (id, isClaimed) =>{
     await updateDoc(batchDoc, newClaim)
 }
 
-
+const handleAvailability= async (id, available) =>{
+    const batchDoc = doc(database, "batches", id)
+    const newAvailability = {available: !available}
+    await updateDoc(batchDoc, newAvailability)
+}
 
 function showPickUpDetails(){
     celebration();
     showPickUp();
-    claimStatus()
-    
+    claimStatus() 
 }
 
 const jsConfetti = new JSConfetti()
@@ -42,13 +46,13 @@ function showPickUp(){
 
 function cancel(){
     setBatchClaimed(!batchClaimed)
+    handleClaim(props.id, !claimed)
 }
 
 function claimStatus(){
-    handleClaim(props.id, props.isClaimed)
+    handleClaim(props.id, claimed)
+    handleAvailability(props.id, availability)
 }
-
-
 
   return(
         <div className="badge-details">
