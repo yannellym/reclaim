@@ -72,4 +72,6 @@ button{
      float: right;
  }
  
- 
+.dark{
+    background-color:black;
+}

@@ -8,6 +8,9 @@ import {Link} from "react-router-dom";
 
 
 const Liked = (props) => {
+
+  
+
     return (
         <div>
             <MarketNav/>
@@ -21,7 +24,7 @@ const Liked = (props) => {
                 </section>
                 <h1>Liked Batches</h1>
                 <section className="likedBatches">
-                {/* {<Batch {...props.details.find(item=> item.liked === true)} />} */}
+                
                 </section>
                 <section className="more">
                     <p>

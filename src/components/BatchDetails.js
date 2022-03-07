@@ -1,38 +1,44 @@
-import "../css/badgeDetails.css"
-import React, { useEffect, useState }from "react"
+import "../css/batchDetails.css"
+import React, { useState }from "react"
 import JSConfetti from 'js-confetti'
 import ClaimedButton from "./ClaimedButton"
 import { collection, doc, updateDoc } from 'firebase/firestore'
 import { database } from "../pages/firebaseConfig"
 
 
-export default function BadgeDetails(props){
+export default function BatchDetails(props){
 
-    // updating Data
+  
 
-const [claimed, setClaimed] = useState(false)
-const [availability, setAvailability] = useState(true)
+// const [claimed, setClaimed] = useState(props.item.isClaimed)
+const [availability, setAvailability] = useState(props.available) //yes
 const batchesCollectionRef = collection(database, "batches")
-let [batchClaimed, setBatchClaimed] = useState(props.isClaimed);
+const [batchClaimed, setBatchClaimed] = useState(props.isClaimed); //false
 
+//GOAL: take the item id, and "false" then use this to match it to the item id in the batches
+//collection and set the isClaimed property to the opposite(true)
 const handleClaim = async (id, isClaimed) =>{
     const batchDoc = doc(database, "batches", id)
     const newClaim = {isClaimed: !isClaimed}
     await updateDoc(batchDoc, newClaim)
 }
 
+//GOAL: take the item id, and "true" then use this to match it to the item id in the batches
+//collection and set the available property to the opposite(false)
 const handleAvailability= async (id, available) =>{
     const batchDoc = doc(database, "batches", id)
     const newAvailability = {available: !available}
     await updateDoc(batchDoc, newAvailability)
 }
 
+// GOAL: how confetti, show pickup details, and set claim isClaimed to "claimed"
 function showPickUpDetails(){
     celebration();
     showPickUp();
     claimStatus() 
 }
 
+//confetti function
 const jsConfetti = new JSConfetti()
 let celebration = () => {
     jsConfetti.addConfetti({
@@ -40,19 +46,24 @@ let celebration = () => {
  })
 }
 
+//show details function
 function showPickUp(){
     setBatchClaimed(!batchClaimed)
 }
 
+//Goal: cancel item, and set isClaimed to false, and availability to true
 function cancel(){
     setBatchClaimed(!batchClaimed)
-    handleClaim(props.id, !claimed)
+    handleClaim(props.id, batchClaimed)
+    handleAvailability(props.id, !availability)
 }
 
 function claimStatus(){
-    handleClaim(props.id, claimed)
-    handleAvailability(props.id, availability)
+    handleClaim(props.id, batchClaimed) // ID, false
+    handleAvailability(props.id, availability) //ID, true
+    // setAvailability(!availability)
 }
+
 
   return(
         <div className="badge-details">
@@ -67,11 +78,11 @@ function claimStatus(){
             <section className="description">    
                 <section>
                     <h4>Description</h4>
-                    <p>{props.description}</p>
+                    <p>{ props.description }</p>
                 </section>
             </section>
             <section className="btn-sec">
-                {batchClaimed? <ClaimedButton /> :<button onClick={showPickUpDetails}>CLAIM</button>}
+                { batchClaimed? <ClaimedButton /> :<button onClick ={ showPickUpDetails }>CLAIM</button>}
             </section>
             
              {batchClaimed?

@@ -1,4 +1,4 @@
-import "../css/badge.css"
+import "../css/batch.css"
 import React, { useState, useEffect } from "react"
 import ClaimedButton from "./ClaimedButton"
 import { collection, doc, updateDoc } from 'firebase/firestore'
@@ -7,13 +7,12 @@ import { database } from "../pages/firebaseConfig"
 export default function Badge(props){
     const [hearted, setHearted] = useState(props.item.liked)
     const batchesCollectionRef = collection(database, "batches")
-
-    let availableMessage;
+   
 
     let badgeAvailability;
-    if (props.item.available === true) {
+    if (props.item.available) {
         badgeAvailability = "See More"
-    } else if (props.item.available === false) {
+    } else if (props.item.available) {
         badgeAvailability = "Claimed"
     }
 
@@ -35,14 +34,13 @@ export default function Badge(props){
     }
 
 
-    
 
   return(
         <div className="badge-container">
            <h1>{props.item.title}</h1>
            <section className="badge-inner">
                <div className="badge-left">
-                    <img src={`../images/${props.item.img}`} alt="bottles" />
+                    <img src= {props.batchImg} alt="bottles" />
                </div>
                <div className="badge-right">
                     <section className="badge-right-first">
@@ -52,7 +50,7 @@ export default function Badge(props){
                         </div>
                         {badgeAvailability === "See More"? 
                         <div className="badge-button">
-                            <button  onClick={displayDetails}>
+                            <button onClick={displayDetails}>
                             {badgeAvailability}
                             </button>
                         </div> 

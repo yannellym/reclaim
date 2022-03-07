@@ -10,7 +10,6 @@ import { database } from "./firebaseConfig"
 
 const MarketFeed = () => {
     let [currentBatch, setCurrentBatch] = useState({ 
-        batches: [],
         currBatch:null,
         showComponent: false,
     })
@@ -37,14 +36,22 @@ const MarketFeed = () => {
                 key={item.id}
                 id={item.id}
                 item={item}
-                handleDetails={handleDetails}  
+                handleDetails={handleDetails} 
+                handleClaim={handleClaim} 
             />  
         )         
     })
 
-    function handleDetails(badgekey){
-        return setCurrentBatch({currBatch: badgekey, showComponent: true})
+    
+    function handleDetails(batchkey){
+        return setCurrentBatch({currBatch: batchkey, showComponent: true})
     }
+
+    function handleClaim(batchkey){
+        return setCurrentBatch({currBatch: batchkey, showComponent: false})
+    }
+    
+
     
 
     return (
@@ -63,7 +70,6 @@ const MarketFeed = () => {
                     <div className="categories">
                         <section>
                             <BasicSelect />
-
                         </section>
                     </div>
                 </div>
@@ -84,7 +90,7 @@ const MarketFeed = () => {
                 </section>
                 <section className="displayedBadge">
                 {
-                        currentBatch.showComponent? <BatchDetails {...details.find(item=> item.id === currentBatch.currBatch )}> </BatchDetails>
+                        currentBatch.showComponent? <BatchDetails {...details.find(item => item.id === currentBatch.currBatch )}> </BatchDetails>
                     : 
                         <div><img src="../images/earth.png" alt="earth" className="earth-waiting" /><h1 className="save-title">Thank you for helping to save the earth!</h1></div> 
                 }

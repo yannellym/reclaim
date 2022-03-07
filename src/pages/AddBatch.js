@@ -3,6 +3,12 @@ import '../css/addBatch.css'
 import { collection, addDoc } from 'firebase/firestore'
 import { database } from "./firebaseConfig"
 import { useState } from "react"
+import Footer from "../components/Footer"
+import MarketNav from "../components/MarketNav"
+import { storage } from "./firebaseConfig"
+import { storage_bucket } from "./firebaseConfig"
+import {ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
+
 
 export default function AddBatch(){
     
@@ -11,9 +17,15 @@ export default function AddBatch(){
         description: "",
         location: "",
         address: "",
+        instructions: "",
+        img: "",
+        available: true,
         liked: false,
         isClaimed: false
     })
+    const [submitted, setSubmitted] = useState(false);
+    const [invalid, setInvalid] = useState(false);
+    
     
     const dbInstance = collection(database, "batches")
 
@@ -22,35 +34,150 @@ export default function AddBatch(){
         setBatches({...batches, ...inputs})
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
         addDoc(dbInstance, batches)
         .then(() => {
-            alert("Data sent!")
+            console.log('submitted')
         })
         .catch((err) => {
-            alert(err.message)
+            setInvalid(true)
         })
     }
 
+   function handleAddBatch(e){
+        handleSubmit();
+        setSubmitted(true)
+  
+            //upload file to firebase
+            let file = e.target.files[0]
+            //create a reference to the file to be uploaded
+            let fileRef = ref(storage_bucket, file.name);
+            //upload the file
+            const uploadTask = uploadBytesResumable(fileRef, file);
+            //track progress
+            uploadTask.on('state_changed', (snapshot) => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('upload is ' + progress + '% done');
+                switch (snapshot.state) {
+                    case 'paused':
+                      console.log('Upload is paused');
+                      break;
+                    case 'running':
+                      console.log('Upload is running');
+                      break;
+                      default: console.log("all ok")
+                  }
+                }, 
+                (error) => {
+                  // Handle unsuccessful uploads
+                }, 
+                () => {
+                  // Handle successful uploads on complete
+                  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+                  getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                    console.log('File available at', downloadURL);
+                    var batchImg = downloadURL;
+                    
+                  });
+                }
+              );
+            }
+    
     return (
     <div className="addingBatch">
-        <form class="add">
-            <label for="title">Title:</label>
-            <input type="text" name="title" required onChange={event => handleInputs(event)} />
-            <label for="description">Description:</label>
-            <input type="text" name="description" required onChange={event => handleInputs(event)}  />
-            <label for="location">Location:</label>
-            <input type="text" name="location" required onChange={event => handleInputs(event)}  />
-            <label for="img">img:</label>
-            <input type="text" name="img" required onChange={event => handleInputs(event)} />
-            <label for="available">Available:</label>
-            <input type="text" name="available" required onChange={event => handleInputs(event)}  /> 
-            <label for="address">Address:</label>
-            <input type="text" name="address" required onChange={event => handleInputs(event)}  /> 
-            <label for="instructions">instructions</label>
-            <input type="text" name="instructions" required onChange={event => handleInputs(event)}  /> 
-        </form>
-        <button onClick={handleSubmit}>Add batch</button>
+        <MarketNav/>
+        <div className="formDiv">
+            <h1> Add your own batch! </h1>
+            <form class="add">
+                <div className="field">
+                    <label for="title">Title:</label>
+                    <input 
+                        type="text" 
+                        name="title" 
+                        value={batches.title}
+                        required
+                        placeholder="'Ex. Cans in a box'" 
+                        onChange={event => handleInputs(event)}
+                    />
+                </div>
+                {invalid&& <span className="err-msg">Please enter a title</span>}
+                <div className="field">
+                    <label for="description" >Description:</label>
+                    <input 
+                        type="text" 
+                        name="description"
+                        value={batches.description} 
+                        minlength="10" 
+                        required 
+                        onChange={event => handleInputs(event)} 
+                     />
+                </div>
+                {invalid&& <span className="err-msg">Please enter a description</span>}
+                <div className="field">
+                    <label for="location">Location:</label>
+                    <input 
+                        type="text" 
+                        name="location" 
+                        value={batches.location}
+                        minlength="5" 
+                        placeholder="'Ex. Bronx, NY'" 
+                        required onChange={event => handleInputs(event)}
+                    />
+                </div>
+                {invalid&& <span className="err-msg">Please enter a location</span>}
+                <div className="field">
+                    <label for="img">img:</label>
+                    <input 
+                        type="file" 
+                        name="img" 
+                        value={batches.img}
+                        required 
+                        onChange={handleAddBatch}
+                    />
+                </div>
+                {invalid&&<span className="err-msg">Please upload an image</span>}
+                <div className="field">
+                    <label for="available">Available:</label>
+                    <input 
+                        type="text" 
+                        name="available" 
+                        value={batches.available}
+                        placeholder="Yes"
+                        required 
+                        onChange={event => handleInputs(event)}
+                    /> 
+                </div>
+                <div className="field">
+                    <label for="address">Address:</label>
+                    <input 
+                        type="text" 
+                        name="address" 
+                        value={batches.address}
+                        placeholder="'Ex. 3604 Broadway New York, NY, 10031'" 
+                        required 
+                        onChange={event => handleInputs(event)}    
+                    /> 
+                </div>
+                {invalid&&<span className="err-msg">Please enter an address</span>}
+                <div className="field">
+                    <label for="instructions">Instructions</label>
+                    <input 
+                        type="text" 
+                        name="instructions" 
+                        value={batches.instructions}
+                        minlength="10" 
+                        required 
+                        onChange={event => handleInputs(event)}    
+                    /> 
+                </div>
+                {invalid&& <span className="err-msg">Please enter instructions</span>}
+            </form>
+            <button onClick={handleAddBatch}>Add batch</button>
+            {submitted && <div class='success-message'>Success! Thank you for adding a new batch</div>}
+        </div>
+        
+        <Footer />
     </div>
     )
 }
+

@@ -1,9 +1,46 @@
-.addingBatch{
-    width: 60%;
-    border: red solid 3px;
+.formDiv{
     margin: 3% auto;
+    max-width: 45%;
+    height: 40rem;
+    text-align: center;
+    box-shadow: 1px 0px 5px var(--green);
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
 }
-input, label{
-    width: 70%;
-    display: inline-block;
+.add{
+    height:75%;
+    line-height: .02;
 }
+
+.field{
+    display: flex;
+    height: 50px;
+    margin: 3% 0;
+}
+.field>label{
+    font-weight: bold;
+    width: 22%;
+    padding-bottom: 10px;
+}
+.field>input{
+    display: inline;
+    width: 78%;
+}
+ 
+
+  .err-msg{
+      height: 3px;
+      display: inline;
+      color: red;
+      font-size: 12px;
+  }
+
+  .success-message{
+      margin: 3%;
+      color: var(--green);
+      font-size: 19px;
+  }
