@@ -23,7 +23,7 @@ const Liked = (props) => {
         setDetails(batchesList);
     }
 
-    useEffect(() => {
+    useEffect((unliked) => {
         getData();
         setUnliked(!unliked)
     }, [unliked]);

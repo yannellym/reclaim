@@ -22,7 +22,7 @@ const Claimed = (props) => {
         setDetails(batchesList);
     }
 
-    useEffect(() => {
+    useEffect((unclaimed) => {
         getData();
         setUnclaimed(!unclaimed)
     }, [unclaimed]);

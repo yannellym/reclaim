@@ -6,6 +6,8 @@
     background: -webkit-linear-gradient(top, #FFF4F4, #FCFDE5);
     background: -moz-linear-gradient(top, #FFF4F4, #FCFDE5);
     background: linear-gradient(to bottom, #FFF4F4, #FCFDE5);
+    min-height: 720px;
+    width: 100%;
 }
 .earthcontainer{
     width: 100%;
@@ -48,7 +50,8 @@ h1{
     height:3rem;
     font-size: 25px;
 }
-.plant{
+.plant{  
+    width:10%;
+    
     float: right;
-    width:7%;
 }

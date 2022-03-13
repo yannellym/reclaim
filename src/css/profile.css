@@ -1,0 +1,63 @@
+.profile-container {
+    min-height: 720px;
+    display: inline-block;
+    width: 100%;
+    background: #B2F6FF;
+    background: -webkit-linear-gradient(top, #ffb7b2, #FEFFF5);
+    background: -moz-linear-gradient(top, #B2F6FF, #FEFFF5);
+    background: linear-gradient(to bottom, #b2e9ffb7, #FEFFF5);
+}
+.profile-section {
+    width: 60%;
+    margin: 2% auto;
+    min-height: 600px;
+    border-radius: 10px; 
+    display: flex;
+    background-color: white;
+    box-shadow: 1px 2px 2px rgb(156, 156, 156) ;
+}
+.left-profile-div {
+    width: 35%;
+    height: 600px;
+    border-right: 2px solid gray;
+}
+.left-profile-div >img {
+    width: 60%;
+    height: 30%;
+    margin: 13% 20%;
+}
+.left-profile-categories {
+    width: 70%;
+    margin: -10% auto;
+    height: 50%;
+}
+.left-profile-categories >div {
+    align-items: space-between;
+}
+.left-profile-categories >div >p{
+    height: 3rem;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 5%;
+    border-bottom: 2px solid gray;
+}
+.left-profile-categories >div >p:hover{
+    background-color: rgba(72, 255, 72, 0.527);
+}
+.right-profile-div {
+    /* outline:rgb(0, 255, 0) solid 3px;  */
+    width: 65%;
+    height: 600px;;
+}
+.contact-info{
+    background-color: red;
+}
+.privacy-info{
+    background-color: rgb(51, 255, 0);
+}
+.agreement-info{
+    background-color: rgb(0, 38, 255);
+}
+.hidden{
+    display:none;
+}
