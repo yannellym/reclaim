@@ -9,20 +9,17 @@ export default function Badge(props){
     const batchesCollectionRef = collection(database, "batches")
    
 
-    let badgeAvailability = "See More"
-    // if (props.item.available) {
-    //     badgeAvailability = "See More"
-    // } else if (props.item.available) {
-    //     badgeAvailability = "Claimed"
-    // }
+    let badgeAvailability;
     let badgeBackground
     if (props.item.available) {
+        badgeAvailability = "See More"
         badgeBackground = {
             backgroundColor: 'white'
         }
-    } else if (!props.item.avialble) {
+    } else if (!props.item.available) {
+        badgeAvailability = "Claimed"
         badgeBackground = {
-            backgroundColor: 'gray'
+            backgroundColor: '#ebebeb'
         }
     }
 
@@ -43,12 +40,14 @@ export default function Badge(props){
         await updateDoc(batchDoc, newLike)
     }
 
+
+
   return(
         <div className="badge-container" style={badgeBackground}>
            <h1>{props.item.title}</h1>
            <section className="badge-inner">
                <div className="badge-left">
-                    <img src= {props.batchImg} alt="bottles" />
+                    <img src={`./images/${props.item.img}`} alt="bottles" />
                </div>
                <div className="badge-right">
                     <section className="badge-right-first">

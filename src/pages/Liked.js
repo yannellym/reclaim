@@ -1,15 +1,42 @@
 import MarketNav from "../components/MarketNav"
 import Footer from "../components/Footer"
 import "../css/liked.css"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import {Link} from "react-router-dom";
-
+import { collection, getDocs } from 'firebase/firestore'
+import { database } from "./firebaseConfig"
+import Batch from "../components/Batch"
 
 
 
 const Liked = (props) => {
+    let [unliked, setUnliked] = useState(props.liked)
+    
+    const [details, setDetails] = useState([]);
 
-  
+    const getData = async () =>{
+        const batchesCol = collection(database, 'batches');
+        const batchesSnapshot = await getDocs(batchesCol);
+        const batchesList = batchesSnapshot.docs.map((doc) => (
+            {...doc.data(), id: doc.id,
+        }));
+        setDetails(batchesList);
+    }
+
+    useEffect(() => {
+        getData();
+        setUnliked(!unliked)
+    }, [unliked]);
+
+    let batchRecords = details.map((item) => {
+        return ( item.liked&&
+            <Batch
+                key={item.id}
+                id={item.id}
+                item={item}
+            />  
+        )         
+    })
 
     return (
         <div>
@@ -24,7 +51,7 @@ const Liked = (props) => {
                 </section>
                 <h1>Liked Batches</h1>
                 <section className="likedBatches">
-                
+                {batchRecords}
                 </section>
                 <section className="more">
                     <p>

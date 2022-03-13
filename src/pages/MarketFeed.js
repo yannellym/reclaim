@@ -24,7 +24,6 @@ const MarketFeed = () => {
         }));
         setDetails(batchesList);
     }
-    console.log(details)
 
     useEffect(() => {
         getData();
