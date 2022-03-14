@@ -19,7 +19,7 @@ export default function Badge(props){
     } else if (!props.item.available) {
         badgeAvailability = "Claimed"
         badgeBackground = {
-            backgroundColor: '#ebebeb'
+            backgroundColor: '#f6f6f6'
         }
     }
 
