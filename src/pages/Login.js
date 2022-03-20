@@ -2,9 +2,9 @@ import {Link} from "react-router-dom";
 import Nav from "../components/Nav"
 import Footer from "../components/Footer";
 import "../css/login.css"
-import React from "react"
-import { app, database } from "../pages/firebaseConfig"
-import { getAuth, signInWithEmailAndPassword} from "firebase/auth"
+import React , { useState } from "react"
+import { useAuth, login } from "../pages/firebaseConfig"
+import { signInWithEmailAndPassword} from "firebase/auth"
 
 
 const Login = () => {
@@ -15,26 +15,29 @@ const Login = () => {
         email: "",
         password:""
     })
-
-    const auth = getAuth();
+    const [loading, setLoading] = useState(false);
+    const currentUser = useAuth();
+ 
+    
     const handleInputs = (e) => {
         let inputs ={[e.target.name] : e.target.value}
         setData({...data, ...inputs})
     }
-    const handleSubmit = () =>{
-        signInWithEmailAndPassword(auth, data.email, data.password)
-        .then((response) => {
-           console.log(response.user) 
-        })
-        .catch((err) => {
-            alert(err.message)
-        })
+
+    async function handleLogin() {
+        try{
+            await login(data.email, data.password)
+        } catch {
+            alert("erro!")
+        }
+        setLoading(false);
     }
     
 
     return (
         <div>
             <Nav />
+            {currentUser ? <h1>you're logged in! <Link to='/marketfeed'><button>go to marketFeed</button></Link></h1> :
             <div className="login">
                 <section className="login-title">
                     <p className="login-select">Log In</p>
@@ -62,7 +65,7 @@ const Login = () => {
                                 type="submit"
                                 value="Log in"
                                 className="login-button"
-                                onClick={handleSubmit}
+                                onClick={handleLogin}
                                 >
                             </input>
                             </div>
@@ -73,6 +76,7 @@ const Login = () => {
                     </section>
                 </section>
             </div>
+            }
             <Footer />
         </div>
     );

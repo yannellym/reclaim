@@ -7,6 +7,7 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
 import FaxIcon from '@mui/icons-material/Fax';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import { useAuth, upload } from "../pages/firebaseConfig"
 
 
 const Profile= () => {
@@ -14,6 +15,10 @@ const Profile= () => {
     const [privacy, setPrivacy] = useState("");
     const [user, setUser] = useState("");
     const [help, setHelp] = useState("");
+    const [photoURL, setPhotoURL] = useState("https://www.clipartmax.com/png/full/223-2233082_earth-t-shirt-vector-blue-earth-smiling-face-1500-1500-world-peace.png");
+    const [photo, setPhoto] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const currentUser = useAuth();
 
     const contactInfoDisplay = () => {
         setDisplay(!display)
@@ -50,6 +55,23 @@ const Profile= () => {
         setHelp(false)
     }, []);
 
+        function handleChange(e){
+          if(e.target.files[0]) {
+              setPhoto(e.target.files[0])
+          }
+        }
+        function handleClick(){
+            upload(photo, currentUser, setLoading);
+        }
+
+        useEffect(() => {
+            if(currentUser?.photoURL){
+            setPhotoURL(currentUser.photoURL)
+            }
+        }, [currentUser])
+
+
+
     return (
         <div>
             <MarketNav/>
@@ -57,7 +79,12 @@ const Profile= () => {
                 <h1>Welcome, @User</h1>
                 <section className="profile-section">
                     <div className="left-profile-div">
-                        <img src="./images/user.png" alt="user" />
+                        <img src={photoURL} alt="user" />
+                            <section className="avatar-section">
+                                <input type="file" className="avatar-uploader" onChange={ handleChange } />
+                                <button  disabled={ loading || !photo }className="file-upload" onClick={handleClick}>upload </button>
+                            </section>
+                        
                         <section className="left-profile-categories">
                            <div>
                                 <p onMouseOver={contactInfoDisplay}>Contact information</p>

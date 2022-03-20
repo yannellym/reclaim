@@ -2,8 +2,7 @@ import "../css/form.css"
 import React from "react"
 import {Link} from "react-router-dom";
 import { useState } from "react"
-import { app, database } from "../pages/firebaseConfig"
-import { getAuth, createUserWithEmailAndPassword} from "firebase/auth"
+import { app, database, signup, useAuth } from "../pages/firebaseConfig"
 
 export default function Form(){
 
@@ -13,19 +12,20 @@ export default function Form(){
         email: "",
         password:""
     })
-   const auth = getAuth();
+    const [loading, setLoading] = useState(false);
+    const currentUser = useAuth();
+
     const handleInputs = (e) => {
         let inputs ={[e.target.name] : e.target.value}
         setData({...data, ...inputs})
     }
-    const handleSubmit = () => {
-        createUserWithEmailAndPassword(auth, data.email, data.password)
-        .then((response) => {
-           console.log(response.user) 
-        })
-        .catch((err) => {
-            alert(err.message)
-        })
+    async function handleSubmit () {
+        try{
+            await signup(data.email, data.password)
+        } catch {
+            alert("erro!")
+        }
+        setLoading(false);
     }
     
     return(
@@ -37,6 +37,7 @@ export default function Form(){
             <section className="signup-box">
             <h2>Welcome to our community!</h2>
             <p>Sign up to get started!</p>
+            <p>logged in as {currentUser?.email}</p>
             <section className="signup-inputs">
                 <form onSubmit={handleSubmit}>
                     <section className="name-inputs">
@@ -78,7 +79,7 @@ export default function Form(){
                     />
                     <label htmlFor="is18">Are you 18 or older ?</label>
                     </section>
-                    <Link to='/marketfeed'> <button onClick={handleSubmit}>Sign up</button></Link>
+                    <Link to='/marketfeed'> <button disabled={loading || currentUser } onClick={handleSubmit}>Sign up</button></Link>
                 </form>
             </section>
             <section>

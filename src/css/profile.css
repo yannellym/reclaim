@@ -22,9 +22,13 @@
     border-right: 2px solid gray;
 }
 .left-profile-div >img {
-    width: 60%;
-    height: 30%;
-    margin: 13% 20%;
+   vertical-align: middle;
+   width: 70%;
+   height: 30%;
+   border-radius: 50%;
+   border-width: 5px;
+   margin: 5% 14% 
+   /* border-color: gray; */
 }
 .left-profile-categories {
     width: 70%;
@@ -111,4 +115,17 @@ p
     box-shadow: 1px 3px 2px gray;
     height:40%;
     border-radius: 10px;
+}
+.avatar-section {
+    display: flex;
+}
+.avatar-uploader{
+    width: 60%;
+    margin: 0 15% 4% 11%;
+    display: inline;
+}
+.file-upload{
+    height: 2rem;
+    width: 30%;
+    margin-right: 15%;
 }

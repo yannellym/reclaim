@@ -1,8 +1,22 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../css/marketNav.css"
-import React from "react"
+import React, { useState } from "react"
+import { logout } from "../pages/firebaseConfig"
 
 export default function MarketNav(){
+
+const [loading, setLoading] = useState(false);
+
+    async function handleLogout() {
+        try {
+            setLoading(true);
+            await logout();
+        } catch {
+            alert("Error!");
+        }
+        setLoading(false);
+    }
+
     return(
         <div>
             <nav>
@@ -32,6 +46,9 @@ export default function MarketNav(){
                         <section>
                             <img src="../images/profile.png" alt="profile icon" id="profileIcon" />
                             <a href="./profile" className="links">Profile</a>
+                        </section>
+                        <section>
+                          <Link to="../"> <button onClick={ handleLogout}> LOG OUT </button> </Link>
                         </section>
                 </section>
             </nav>
