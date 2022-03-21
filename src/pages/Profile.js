@@ -7,10 +7,10 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
 import FaxIcon from '@mui/icons-material/Fax';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { useAuth, upload } from "../pages/firebaseConfig"
+import { useAuth, upload, auth } from "../pages/firebaseConfig"
 
 
-const Profile= () => {
+const Profile= (props) => {
     const [display, setDisplay] = useState("");
     const [privacy, setPrivacy] = useState("");
     const [user, setUser] = useState("");
@@ -19,7 +19,9 @@ const Profile= () => {
     const [photo, setPhoto] = useState(null);
     const [loading, setLoading] = useState(false);
     const currentUser = useAuth();
+    const [email, setEmail] = useState();
 
+    
     const contactInfoDisplay = () => {
         setDisplay(!display)
         setPrivacy(false)
@@ -67,8 +69,9 @@ const Profile= () => {
         useEffect(() => {
             if(currentUser?.photoURL){
             setPhotoURL(currentUser.photoURL)
+            setEmail(currentUser.email)
             }
-        }, [currentUser])
+        }, [currentUser, setEmail])
 
 
 
@@ -76,7 +79,7 @@ const Profile= () => {
         <div>
             <MarketNav/>
             <section className="profile-container">
-                <h1>Welcome, @User</h1>
+                <h1>Welcome, {email} </h1>
                 <section className="profile-section">
                     <div className="left-profile-div">
                         <img src={photoURL} alt="user" />

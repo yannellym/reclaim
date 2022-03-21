@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import "../css/login.css"
 import React , { useState } from "react"
 import { useAuth, login } from "../pages/firebaseConfig"
-import { signInWithEmailAndPassword} from "firebase/auth"
 
 
 const Login = () => {
@@ -17,6 +16,7 @@ const Login = () => {
     })
     const [loading, setLoading] = useState(false);
     const currentUser = useAuth();
+
  
     
     const handleInputs = (e) => {
@@ -28,7 +28,7 @@ const Login = () => {
         try{
             await login(data.email, data.password)
         } catch {
-            alert("erro!")
+            alert("error!")
         }
         setLoading(false);
     }
@@ -65,6 +65,7 @@ const Login = () => {
                                 type="submit"
                                 value="Log in"
                                 className="login-button"
+                                
                                 onClick={handleLogin}
                                 >
                             </input>
