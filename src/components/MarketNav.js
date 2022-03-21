@@ -48,7 +48,7 @@ const [loading, setLoading] = useState(false);
                             <a href="./profile" className="links">Profile</a>
                         </section>
                         <section>
-                          <Link to="../"> <button onClick={ handleLogout}> LOG OUT </button> </Link>
+                          <Link to="/login"> <button onClick={ handleLogout}> LOG OUT </button> </Link>
                         </section>
                 </section>
             </nav>

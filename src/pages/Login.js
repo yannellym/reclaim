@@ -15,6 +15,7 @@ const Login = () => {
         password:""
     })
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('')
     const currentUser = useAuth();
 
  
@@ -28,7 +29,8 @@ const Login = () => {
         try{
             await login(data.email, data.password)
         } catch {
-            alert("error!")
+            
+            setError("please input valid pass")
         }
         setLoading(false);
     }
@@ -59,7 +61,8 @@ const Login = () => {
                             name="password"
                             onChange={event => handleInputs(event)}
                         />
-                        <Link to='/marketfeed'> 
+                        <section className="login-error">{error}</section>
+                        <Link to={currentUser? '/marketfeed' : '/login'}> 
                             <div>
                             <input
                                 type="submit"

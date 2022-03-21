@@ -10,7 +10,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { useAuth, upload, auth } from "../pages/firebaseConfig"
 
 
-const Profile= (props) => {
+const Profile= () => {
     const [display, setDisplay] = useState("");
     const [privacy, setPrivacy] = useState("");
     const [user, setUser] = useState("");
@@ -20,7 +20,7 @@ const Profile= (props) => {
     const [loading, setLoading] = useState(false);
     const currentUser = useAuth();
     const [email, setEmail] = useState();
-
+    console.log(currentUser)
     
     const contactInfoDisplay = () => {
         setDisplay(!display)
@@ -64,6 +64,7 @@ const Profile= (props) => {
         }
         function handleClick(){
             upload(photo, currentUser, setLoading);
+            window.location.reload()
         }
 
         useEffect(() => {

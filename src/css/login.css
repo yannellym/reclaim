@@ -69,4 +69,6 @@
     text-decoration: none;
   }
 
-  
+  .login-error{
+    color: red;
+  }

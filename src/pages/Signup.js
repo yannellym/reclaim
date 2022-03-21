@@ -1,9 +1,8 @@
 import "../css/signup.css"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer";
-import React from "react"
-import {Link} from "react-router-dom";
-import { useState } from "react"
+import React, { useState }  from "react"
+import { Link } from "react-router-dom";
 import { signup, useAuth } from "../pages/firebaseConfig"
 
 
@@ -43,7 +42,6 @@ const Signup = () => {
                 <section className="signup-box">
                     <h2>Welcome to our community!</h2>
                     <p>Sign up to get started!</p>
-                    <p>logged in as {currentUser?.email}</p>
                 <section className="signup-inputs">
                     <form onSubmit={handleSubmit}>
                         <section className="name-inputs">
