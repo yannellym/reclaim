@@ -20,7 +20,7 @@ const Profile= () => {
     const [loading, setLoading] = useState(false);
     const currentUser = useAuth();
     const [email, setEmail] = useState();
-    console.log(currentUser)
+    const [name, setName] = useState();
     
     const contactInfoDisplay = () => {
         setDisplay(!display)
@@ -64,13 +64,13 @@ const Profile= () => {
         }
         function handleClick(){
             upload(photo, currentUser, setLoading);
-            window.location.reload()
         }
 
         useEffect(() => {
             if(currentUser?.photoURL){
             setPhotoURL(currentUser.photoURL)
             setEmail(currentUser.email)
+            setName(currentUser.displayName)
             }
         }, [currentUser, setEmail])
 
@@ -102,8 +102,7 @@ const Profile= () => {
                         <section className={display ? "contact-info" : "hidden"}>
                            <div className="profile-name">
                                 <section className="labels">
-                                    <h4>First Name:</h4>
-                                    <h4>Last Name:</h4>
+                                    <h4>Name</h4>
                                     <h4>Email:</h4>
                                     <h4>Phone Number:</h4>
                                     <h4>Address:</h4>
@@ -111,10 +110,8 @@ const Profile= () => {
                                     <h4>State:</h4>
                                 </section>
                                 <section className="user-inputs">
-                                    <p>user name</p>
-                                    <p>user name</p>
-                                    <p>user name</p>
-                                    <p>user name</p>
+                                    <p>{name}</p>
+                                    <p>{email}</p>
                                     <p>user name</p>
                                     <p>user name</p>
                                     <p>user name</p>

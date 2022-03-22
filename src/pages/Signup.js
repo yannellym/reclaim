@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { signup, useAuth } from "../pages/firebaseConfig"
 
 
+
 const Signup = () => {
 
     const [data, setData] = useState({
@@ -33,7 +34,6 @@ const Signup = () => {
     return (
         <div>
             <Nav />
-            {currentUser ? <h1>you're already signed up! <Link to='/marketfeed'><button>go to marketFeed</button></Link></h1> :
             <div className="signup">
                 <section className="signup-title">
                     <p className="login-unselect"><Link to='/login'>Login</Link></p>
@@ -51,11 +51,13 @@ const Signup = () => {
                                 onChange={event => handleInputs(event)}
                                 name="firstname"
                                 className="first-name"
+                                autoComplete="section-name"
                             />
                             <input 
                                 type="text"
                                 placeholder="Last Name"
                                 name="lastname"
+                                autoComplete="section-additional-name"
                                 onChange={event => handleInputs(event)}
                             />
                         </section>
@@ -64,12 +66,14 @@ const Signup = () => {
                             type="email"
                             placeholder="Email"
                             name="email"
+                            autoComplete="section-email"
                             onChange={event => handleInputs(event)}
                         />
                             <input 
                                 type="password"
                                 placeholder="Password"
                                 name="password"
+                                autoComplete="section-current-password"
                                 onChange={event => handleInputs(event)}
                             />
                         </section>
@@ -81,7 +85,6 @@ const Signup = () => {
                 </section>
              </section>
             </div>
-            }
         <Footer />
     </div>
     );

@@ -2,8 +2,12 @@ import Button from "./Button"
 import {Link} from "react-router-dom";
 import "../css/homeNav.css"
 import React from "react"
+import { useAuth } from "../pages/firebaseConfig"
 
 export default function Nav(){
+
+    const currentUser = useAuth();
+
     return(
         <div>
             <nav>
@@ -18,7 +22,7 @@ export default function Nav(){
                     <a href="./#facts" className="link">Facts</a>
                     <a href="./#goal" className="link">Goal</a>
                     <a href="./#aboutus" className="link">About Us</a>
-                    <Link to='/login'> <Button/></Link>
+                    <Link to={currentUser? '/marketfeed' : '/signup'}> <Button/></Link>
                 </section>
             </nav>
         </div>

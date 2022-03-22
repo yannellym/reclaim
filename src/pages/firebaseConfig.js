@@ -5,6 +5,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged , signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react"
 
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -62,3 +63,4 @@ export async function upload (file, currentUser, setLoading) {
     setLoading(false)
     alert("uploaded File")
 }
+

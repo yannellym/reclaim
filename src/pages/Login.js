@@ -3,11 +3,13 @@ import Nav from "../components/Nav"
 import Footer from "../components/Footer";
 import "../css/login.css"
 import React , { useState } from "react"
-import { useAuth, login } from "../pages/firebaseConfig"
+import { useAuth, login, app } from "../pages/firebaseConfig"
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 
 
 const Login = () => {
-
+    const provider = new GoogleAuthProvider();
     const [data, setData] = React.useState({
         firstname: "",
         lastname: "",
@@ -34,12 +36,35 @@ const Login = () => {
         }
         setLoading(false);
     }
-    
+
+    const signin = () =>  {
+        const auth = getAuth();
+        signInWithPopup(auth, provider)
+        .then((result) => {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            // The signed-in user info.
+            const user = result.user;
+            console.log(user)
+            // ...
+          }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.email;
+            // The AuthCredential type that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
+            console.log(errorMessage)
+          });
+    }
 
     return (
         <div>
             <Nav />
-            {currentUser ? <h1>you're logged in! <Link to='/marketfeed'><button>go to marketFeed</button></Link></h1> :
+           
             <div className="login">
                 <section className="login-title">
                     <p className="login-select">Log In</p>
@@ -53,12 +78,14 @@ const Login = () => {
                             type="email"
                             placeholder="Email"
                             name="email"
+                            autoComplete="section-email"
                             onChange={event => handleInputs(event)}
                         />
                         <input 
                             type="password"
                             placeholder="Password"
                             name="password"
+                            autoComplete="section-current-password"
                             onChange={event => handleInputs(event)}
                         />
                         <section className="login-error">{error}</section>
@@ -74,13 +101,13 @@ const Login = () => {
                             </input>
                             </div>
                         </Link>
+                        <Link to={currentUser? '/marketfeed' : '/login'}> <button onClick={signin}>google</button> </Link>
                     </form>
                     <section className="login-button-bottom">
                         <p>Don't have an account? <Link to='/signup'><strong class="signup-link"> Sign Up</strong></Link></p>
                     </section>
                 </section>
             </div>
-            }
             <Footer />
         </div>
     );

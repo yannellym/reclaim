@@ -3,9 +3,11 @@ import Nav from "../components/Nav"
 import Footer from "../components/Footer";
 import "../css/home.css"
 import React from "react"
+import { useAuth } from "../pages/firebaseConfig"
 
 const Home  = () => {
-    
+    const currentUser = useAuth();
+
     return (
         <div>
             <Nav />
@@ -23,7 +25,7 @@ const Home  = () => {
                          and help us save the world!
                     </p>
                     <section className="hero-btn">
-                        <Link to='/signup'><button className="btn">Sign Up!</button></Link>
+                        <Link to={currentUser? '/marketfeed' : '/signup'}><button className="btn">Sign Up!</button></Link>
                     </section>
                 </section>
                 <section className="hero-right">

@@ -6,6 +6,8 @@ import React, { useEffect, useState } from "react"
 import { collection, getDocs } from 'firebase/firestore'
 import { database } from "./firebaseConfig"
 import Batch from "../components/Batch"
+import ClaimedBatch from "../components/ClaimedBatches"
+
 
 
 const Claimed = (props) => {
@@ -29,7 +31,7 @@ const Claimed = (props) => {
 
     let batchRecords = details.map((item) => {
         return ( item.isClaimed&&
-            <Batch
+            <ClaimedBatch
                 key={item.id}
                 id={item.id}
                 item={item}
