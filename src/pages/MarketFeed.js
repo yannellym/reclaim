@@ -13,7 +13,8 @@ const MarketFeed = () => {
         currBatch:null,
         showComponent: false,
     })
-    
+    const [input, setInput] = useState("");
+    const [output, setOutput] = useState([]);
     const [details, setDetails] = useState([]);
 
     const getData = async () =>{
@@ -29,7 +30,19 @@ const MarketFeed = () => {
         getData();
     }, []);
 
-    let batchRecords = details.map((item) => {
+
+    useEffect(() => {
+        setOutput([])
+        details.filter(val => {
+            if(val.location.toLowerCase().includes(input.toLocaleLowerCase())) 
+            {
+                setOutput(output => [...output, val])
+            }
+        })
+    }, [input, details])
+
+
+    let batchRecords = output.map((item) => {
         return (
             <Batch
                 key={item.id}
@@ -50,9 +63,6 @@ const MarketFeed = () => {
         return setCurrentBatch({currBatch: batchkey, showComponent: false})
     }
     
-
-    
-
     return (
         <div className="marketFeed">
             <MarketNav/>
@@ -63,7 +73,7 @@ const MarketFeed = () => {
                 </div>
                 <div className="search-box">
                     <div className="bar-box">
-                        <input type="text" placeholder="Search for a location..."/>
+                        <input type="text" placeholder="Search for a location..." onChange= { e => setInput(e.target.value)} />
                         <button>SEARCH</button>
                     </div>
                     <div className="categories">

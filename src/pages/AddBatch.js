@@ -35,6 +35,7 @@ export default function AddBatch(){
     }
 
     const handleSubmit = (event) => {
+        setSubmitted(true)
         addDoc(dbInstance, batches)
         .then(() => {
             console.log('submitted')
@@ -45,8 +46,6 @@ export default function AddBatch(){
     }
 
    function handleAddBatch(e){
-        handleSubmit();
-        setSubmitted(true)
   
             //upload file to firebase
             let file = e.target.files[0]
@@ -107,7 +106,7 @@ export default function AddBatch(){
                         type="text" 
                         name="description"
                         value={batches.description} 
-                        minlength="10" 
+                        min="10" 
                         required 
                         onChange={event => handleInputs(event)} 
                      />
@@ -119,7 +118,7 @@ export default function AddBatch(){
                         type="text" 
                         name="location" 
                         value={batches.location}
-                        minlength="5" 
+                        min="5" 
                         placeholder="'Ex. Bronx, NY'" 
                         required onChange={event => handleInputs(event)}
                     />
@@ -160,19 +159,19 @@ export default function AddBatch(){
                 </div>
                 {invalid&&<span className="err-msg">Please enter an address</span>}
                 <div className="field">
-                    <label for="instructions">Instructions</label>
+                    <label for="instructions">Instructions:</label>
                     <input 
                         type="text" 
                         name="instructions" 
                         value={batches.instructions}
-                        minlength="10" 
+                        min="10" 
                         required 
                         onChange={event => handleInputs(event)}    
                     /> 
                 </div>
                 {invalid&& <span className="err-msg">Please enter instructions</span>}
             </form>
-            <button onClick={handleAddBatch}>Add batch</button>
+            <button onClick={handleSubmit}>Add batch</button>
             {submitted && <div class='success-message'>Success! Thank you for adding a new batch</div>}
         </div>
         
