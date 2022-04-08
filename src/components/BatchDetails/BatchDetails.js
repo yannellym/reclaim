@@ -1,9 +1,9 @@
-import "../css/batchDetails.css"
+import "./batchDetails.css"
 import React, { useState }from "react"
 import JSConfetti from 'js-confetti'
-import ClaimedButton from "./ClaimedButton"
+import ClaimedButton from "../ClaimedButton/ClaimedButton.js"
 import { collection, doc, updateDoc } from 'firebase/firestore'
-import { database } from "../pages/firebaseConfig"
+import { database } from "../../pages/firebaseConfig/firebaseConfig"
 
 
 export default function BatchDetails(props){

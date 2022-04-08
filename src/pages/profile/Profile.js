@@ -1,13 +1,13 @@
-import MarketNav from "../components/MarketNav"
-import Footer from "../components/Footer"
-import "../css/profile.css"
+import MarketNav from "../../components/MarketNav/MarketNav"
+import Footer from "../../components/Footer/Footer"
+import "./profile.css"
 import React, { useEffect, useState } from "react"
-import ControlledAccordions from "../components/Profile-accordion"
+import ControlledAccordions from "../../components/Accordion/Profile-accordion"
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
 import FaxIcon from '@mui/icons-material/Fax';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { useAuth, upload, auth } from "../pages/firebaseConfig"
+import { useAuth, upload, auth } from "../firebaseConfig/firebaseConfig"
 
 
 const Profile= () => {

@@ -1,8 +1,8 @@
-import "../css/claimedbatches.css"
+import "./claimedbatches.css"
 import React, { useState, useEffect } from "react"
-import ClaimedButton from "./ClaimedButton"
+import ClaimedButton from "../ClaimedButton/ClaimedButton.js"
 import { collection, doc, updateDoc } from 'firebase/firestore'
-import { database } from "../pages/firebaseConfig"
+import { database } from "../../pages/firebaseConfig/firebaseConfig"
 import { getDocs } from 'firebase/firestore'
 
 export default function ClaimedBatch (props){

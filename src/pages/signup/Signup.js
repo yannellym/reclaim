@@ -1,9 +1,9 @@
-import "../css/signup.css"
-import Nav from "../components/Nav"
-import Footer from "../components/Footer";
+import "./signup.css"
+import Nav from "../../components/Nav/Nav"
+import Footer from "../../components/Footer/Footer";
 import React, { useState }  from "react"
 import { Link } from "react-router-dom";
-import { signup, useAuth } from "../pages/firebaseConfig"
+import { signup, useAuth } from "../firebaseConfig/firebaseConfig"
 
 
 

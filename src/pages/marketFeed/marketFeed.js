@@ -1,12 +1,12 @@
-import MarketNav from "../components/MarketNav"
-import Footer from "../components/Footer"
-import "../css/marketFeed.css"
-import BasicSelect from "../components/BasicSelect"
-import Batch from "../components/Batch"
+import MarketNav from "../../components/MarketNav/MarketNav"
+import Footer from "../../components/Footer/Footer"
+import "./marketFeed.css"
+import BasicSelect from "../../components/BasicSelect/BasicSelect"
+import Batch from "../../components/Batch/Batch"
 import React, { useEffect, useState } from "react"
-import BatchDetails from "../components/BatchDetails" 
+import BatchDetails from "../../components/BatchDetails/BatchDetails" 
 import { collection, getDocs } from 'firebase/firestore'
-import { database } from "./firebaseConfig"
+import { database } from "../firebaseConfig/firebaseConfig"
 
 const MarketFeed = () => {
     let [currentBatch, setCurrentBatch] = useState({ 

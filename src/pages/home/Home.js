@@ -1,9 +1,9 @@
 import {Link} from "react-router-dom";
-import Nav from "../components/Nav"
-import Footer from "../components/Footer";
-import "../css/home.css"
+import Nav from "../../components/Nav/Nav.js"
+import Footer from "../../components/Footer/Footer";
+import "./home.css"
 import React from "react"
-import { useAuth } from "../pages/firebaseConfig"
+import { useAuth } from "../firebaseConfig/firebaseConfig"
 
 const Home  = () => {
     const currentUser = useAuth();

@@ -1,4 +1,4 @@
-import "../css/claimedButton.css"
+import "./claimedButton.css"
 import React from "react"
 
 export default function Button(){

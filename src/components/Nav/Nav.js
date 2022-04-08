@@ -1,8 +1,8 @@
-import Button from "./Button"
+import Button from "../Button/Button"
 import {Link} from "react-router-dom";
-import "../css/homeNav.css"
+import "./Nav.css"
 import React from "react"
-import { useAuth } from "../pages/firebaseConfig"
+import { useAuth } from "../../pages/firebaseConfig/firebaseConfig"
 
 export default function Nav(){
 

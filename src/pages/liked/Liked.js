@@ -1,11 +1,11 @@
-import MarketNav from "../components/MarketNav"
-import Footer from "../components/Footer"
-import "../css/liked.css"
+import MarketNav from "../../components/MarketNav/MarketNav"
+import Footer from "../../components/Footer/Footer"
+import "./liked.css"
 import React, { useEffect, useState } from "react"
 import {Link} from "react-router-dom";
 import { collection, getDocs } from 'firebase/firestore'
-import { database } from "./firebaseConfig"
-import Batch from "../components/Batch"
+import { database } from "../firebaseConfig/firebaseConfig"
+import Batch from "../../components/Batch/Batch"
 
 
 

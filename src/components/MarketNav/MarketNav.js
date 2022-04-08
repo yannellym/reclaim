@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import "../css/marketNav.css"
+import "./marketNav.css"
 import React, { useState } from "react"
-import { logout } from "../pages/firebaseConfig"
+import { logout } from "../../pages/firebaseConfig/firebaseConfig"
 
 export default function MarketNav(){
 

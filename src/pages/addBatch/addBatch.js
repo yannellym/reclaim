@@ -1,14 +1,13 @@
 import React from 'react';
-import '../css/addBatch.css'
+import './addBatch.css'
 import { collection, addDoc } from 'firebase/firestore'
-import { database } from "./firebaseConfig"
+import { database } from "../firebaseConfig/firebaseConfig"
 import { useState } from "react"
-import Footer from "../components/Footer"
-import MarketNav from "../components/MarketNav"
-import { storage } from "./firebaseConfig"
-import { storage_bucket } from "./firebaseConfig"
+import Footer from "../../components/Footer/Footer.js"
+import MarketNav from "../../components/MarketNav/MarketNav"
+import { storage } from "../firebaseConfig/firebaseConfig.js"
+import { storage_bucket } from "../firebaseConfig/firebaseConfig"
 import {ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
-
 
 export default function AddBatch(){
     

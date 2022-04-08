@@ -1,13 +1,13 @@
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import MarketFeed from './pages/MarketFeed';
-import Liked from './pages/Liked';
-import Claimed from './pages/Claimed';
-import Profile from './pages/Profile';
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
+import MarketFeed from './pages/marketFeed/marketFeed';
+import Liked from './pages/liked/Liked';
+import Claimed from './pages/claimed/Claimed';
+import Profile from './pages/profile/Profile';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import React from "react"
-import AddBatch from './pages/AddBatch'
+import AddBatch from './pages/addBatch/addBatch.js'
 
 
 function App() {

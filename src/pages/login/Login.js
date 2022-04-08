@@ -1,11 +1,10 @@
 import {Link} from "react-router-dom";
-import Nav from "../components/Nav"
-import Footer from "../components/Footer";
-import "../css/login.css"
+import Nav from "../../components/Nav/Nav"
+import Footer from "../../components/Footer/Footer";
+import "./login.css"
 import React , { useState } from "react"
-import { useAuth, login, app } from "../pages/firebaseConfig"
+import { useAuth, login, app } from "../firebaseConfig/firebaseConfig"
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
 
 
 const Login = () => {
@@ -37,29 +36,29 @@ const Login = () => {
         setLoading(false);
     }
 
-    const signin = () =>  {
-        const auth = getAuth();
-        signInWithPopup(auth, provider)
-        .then((result) => {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            // The signed-in user info.
-            const user = result.user;
-            console.log(user)
-            // ...
-          }).catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
-            console.log(errorMessage)
-          });
-    }
+    // const signin = () =>  {
+    //     const auth = getAuth();
+    //     signInWithPopup(auth, provider)
+    //     .then((result) => {
+    //         // This gives you a Google Access Token. You can use it to access the Google API.
+    //         const credential = GoogleAuthProvider.credentialFromResult(result);
+    //         const token = credential.accessToken;
+    //         // The signed-in user info.
+    //         const user = result.user;
+    //         console.log(user)
+    //         // ...
+    //       }).catch((error) => {
+    //         // Handle Errors here.
+    //         const errorCode = error.code;
+    //         const errorMessage = error.message;
+    //         // The email of the user's account used.
+    //         const email = error.email;
+    //         // The AuthCredential type that was used.
+    //         const credential = GoogleAuthProvider.credentialFromError(error);
+    //         // ...
+    //         console.log(errorMessage)
+    //       });
+    // }
 
     return (
         <div>
@@ -101,7 +100,7 @@ const Login = () => {
                             </input>
                             </div>
                         </Link>
-                        <Link to={currentUser? '/marketfeed' : '/login'}> <button onClick={signin}>google</button> </Link>
+                        <Link to='/marketfeed'><button>Sign In as a guest </button> </Link>
                     </form>
                     <section className="login-button-bottom">
                         <p>Don't have an account? <Link to='/signup'><strong class="signup-link"> Sign Up</strong></Link></p>
