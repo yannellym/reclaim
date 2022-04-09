@@ -17,6 +17,10 @@ const MarketFeed = () => {
     const [output, setOutput] = useState([]);
     const [details, setDetails] = useState([]);
 
+    const [filterInput, setFilterInput] = useState(false);
+    const [filteredOutput, setFilteredOutput] = useState([]);
+    const [filteredDetails, setFilteredDetails] = useState([]);
+
     const getData = async () =>{
         const batchesCol = collection(database, 'batches');
         const batchesSnapshot = await getDocs(batchesCol);
@@ -41,6 +45,24 @@ const MarketFeed = () => {
         })
     }, [input, details])
 
+    function onlyAvailable(){
+        setOutput([])
+        details.filter(val => {
+            if(val.available === true) 
+            {
+                setOutput(output => [...output, val])
+            }
+        })
+    }
+    function onlyClaimed(){
+        setOutput([])
+        details.filter(val => {
+            if(val.available === false) 
+            {
+                setOutput(output => [...output, val])
+            }
+        })
+    }
 
     let batchRecords = output.map((item) => {
         return (
@@ -78,7 +100,10 @@ const MarketFeed = () => {
                     </div>
                     <div className="categories">
                         <section>
-                            <BasicSelect />
+                            <h4>Filter:</h4>
+                            <p onClick= {onlyAvailable}>available</p>
+                            <p onClick= {onlyClaimed} className="claimedFilter">Claimed</p>
+                            
                         </section>
                     </div>
                 </div>

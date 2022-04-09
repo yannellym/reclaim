@@ -22,6 +22,8 @@
     line-height: 1.5;
     box-shadow: 2px 3px 8px;
 }
+
+
 .market-box{
     width: 13%;
     padding: 0.5% 0 0 5%;
@@ -30,6 +32,8 @@
     width: 80%;
     height: 70%;
 }
+
+
 .search-box{
     display:flex;
     flex-wrap: wrap;
@@ -59,16 +63,33 @@
     margin-left:1%;
     box-shadow: 1px 2px 5px rgba(19, 19, 19, 0.664);
 }
-button:hover{
-    background-color: var(--green);
-}
+
+
 .categories>section{
     display:flex;
-    margin: 0% 65px;
-    width: 100%;
-    justify-content: space-between;
-    padding-top:3%;
+    margin: 0% 4.5rem;
+    width: 90%;
+    justify-content: space-around;
 }
+.categories > section > p{
+  font-size: 1rem;
+  padding: 4%;
+  background-color: rgba(11, 151, 58, 0.768);
+  border-radius: 37px;
+  color: white;
+}
+.claimedFilter{
+    background-color: rgba(0, 0, 0, 0.448)!important;
+    color: white;
+  }
+
+.categories > section >p:hover{
+   box-shadow: 2px 2px 6px rgb(43, 42, 42);
+}
+
+
+
+
 .badges{
     width:48%;
     margin: 4% 2%;
@@ -97,3 +118,4 @@ button:hover{
 .save-title{
     color: rgb(199, 199, 199);
 }
+
