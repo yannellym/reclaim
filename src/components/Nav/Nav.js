@@ -22,7 +22,7 @@ export default function Nav(){
                     <a href="./#facts" className="link">Facts</a>
                     <a href="./#goal" className="link">Goal</a>
                     <a href="./#aboutus" className="link">About Us</a>
-                    <Link to={currentUser? '/marketfeed' : '/signup'}> <Button/></Link>
+                    <Link to={currentUser? '/marketfeed' : '/login'}> <Button/></Link>
                 </section>
             </nav>
         </div>

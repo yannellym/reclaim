@@ -66,10 +66,10 @@ function claimStatus(){
 
 
   return(
-        <div className="badge-details">
+        <div className="badge-details" onMouseLeave={() => window.location.reload()}>
            <h1>{props.title}</h1>
            <section className="img-location">
-                <img src={`../images/${props.img}`} alt="bottles" />
+                <img src={`../images/${props.img}`} alt="recyclables" />
                 <section>
                     <img src="../images/location.png" alt="location" />
                     <p>{props.location}</p>
