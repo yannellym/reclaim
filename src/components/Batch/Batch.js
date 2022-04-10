@@ -7,7 +7,9 @@ import { database } from "../../pages/firebaseConfig/firebaseConfig"
 export default function Batch(props){
     const [hearted, setHearted] = useState(props.item.liked)
     const batchesCollectionRef = collection(database, "batches")
-   
+    const [imageOfBatch] = useState(props.item.img.slice(12))
+
+
 
     let badgeAvailability;
     let badgeBackground
@@ -47,7 +49,7 @@ export default function Batch(props){
            <h1>{props.item.title}</h1>
            <section className="badge-inner">
                <div className="badge-left">
-                    <img src={`./images/${props.item.img}`} alt="bottles" />
+                    <img src={`https://firebasestorage.googleapis.com/v0/b/reclaim-react.appspot.com/o/images%2F${imageOfBatch}?alt=media`} alt="recyclable" />
                </div>
                <div className="badge-right">
                     <section className="badge-right-first">

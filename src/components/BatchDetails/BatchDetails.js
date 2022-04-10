@@ -14,6 +14,7 @@ export default function BatchDetails(props){
 const [availability, setAvailability] = useState(props.available) //yes
 const batchesCollectionRef = collection(database, "batches")
 const [batchClaimed, setBatchClaimed] = useState(props.isClaimed); //false
+const [imageOfBatch] = useState(props.img.slice(12))
 
 //GOAL: take the item id, and "false" then use this to match it to the item id in the batches
 //collection and set the isClaimed property to the opposite(true)
@@ -69,7 +70,7 @@ function claimStatus(){
         <div className="badge-details" onMouseLeave={() => window.location.reload()}>
            <h1>{props.title}</h1>
            <section className="img-location">
-                <img src={`../images/${props.img}`} alt="recyclables" />
+                <img src={`https://firebasestorage.googleapis.com/v0/b/reclaim-react.appspot.com/o/images%2F${imageOfBatch}?alt=media`} alt="recyclable" />
                 <section>
                     <img src="../images/location.png" alt="location" />
                     <p>{props.location}</p>
