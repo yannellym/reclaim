@@ -4,7 +4,7 @@
 :root{
   --outline: 2px red solid;
   --marmelad: 'Marmelad', sans-serif;
-  --navgray: rgba(0, 0, 0, 0.527);
+  --navgray: rgb(230, 229, 229);
   --green: rgb(51, 180, 68);
   --blue: #60B7FF;
   --footblack: #000000c7;
