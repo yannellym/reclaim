@@ -48,7 +48,8 @@ html, body{
 
 /* How */
 .how{
-  height: 50rem;
+  height: 54rem;
+  border-top: var(--green) 2px solid;
 }
 .how-title{
   display: flex;

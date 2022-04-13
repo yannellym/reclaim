@@ -131,7 +131,7 @@ const Home  = () => {
                  passionate about recycling to give us a try.
             </p>
             <section className="goal-circles">
-                <p><span className="quantity">3,000+ </span><br/>ACTIVE <br/>USERS</p>
+                <p><span className="quantity ">3,000+ </span><br/>ACTIVE <br/>USERS</p>
                 <p><span className="quantity">30,000K </span><br/>TONS RECYCLED</p>
                 <p><span className="quantity">1</span><br/>DEDICATED TEAM</p>
             </section>
