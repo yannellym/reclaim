@@ -1,9 +1,9 @@
 import Button from "../Button/Button"
 import {Link} from "react-router-dom";
 import "./Nav.css"
-import React from "react"
+import React, { useState } from "react"
 import { useAuth } from "../../pages/firebaseConfig/firebaseConfig"
-
+import Sidebar from "./Sidebar"
 export default function Nav(){
 
     const currentUser = useAuth();
@@ -18,13 +18,25 @@ export default function Nav(){
                             <p><span class="logo-half-home">Re</span>Claim</p>
                         </section>
                     </Link>
-                    <a href="./#howitworks" className="link">How it works</a>
-                    <a href="./#facts" className="link">Facts</a>
-                    <a href="./#goal" className="link">Goal</a>
-                    <a href="./#aboutus" className="link">About Us</a>
+                    <section className="info">
+                        <a href="./#howitworks" className="link">How it works</a>
+                        <a href="./#facts" className="link">Facts</a>
+                        <a href="./#goal" className="link">Goal</a>
+                        <a href="./#aboutus" className="link">About Us</a>
+                    </section>
+
                     <Link to={currentUser? '/marketfeed' : '/login'}> <Button/></Link>
                 </section>
+                <div className="ham">
+                        <Sidebar pageWrapId={"page-wrap"} outerContainerId={"ham"} />
+                             <div id="page-wrap">
+                        <h1>Click to show menu</h1>
+                    </div>
+                    </div>
+                   
+                  
             </nav>
+           
         </div>
     )
 }

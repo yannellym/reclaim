@@ -5,7 +5,7 @@ import Slide from "../../components/Swiper/Swiper";
 import "./home.css"
 import React from "react"
 import { useAuth } from "../firebaseConfig/firebaseConfig"
-
+import SideBar from "../../components/Nav/Sidebar.js"
 const Home  = () => {
     const currentUser = useAuth();
 
@@ -14,33 +14,19 @@ const Home  = () => {
             <Nav />
             <section className="hero">
                 <section className="hero-left">
-                    <p>
-                        ReClaim is a platform dedicated to those who love recycling. 
-                        The concept for this community originated from a problem faced by the founders: 
-                        "What can I do with all the recyclables I have?". This is when ReClaim was born! 
-                         ReClaim makes recycling easy and fun to do. You can post your own recyclables for
-                         other people to collect. You can browse the MarketFeed to look for recycles you might 
-                         like to collect. Lastly, you can like badges of recyclables to come back to them later!
-                         With a platform so easy to use, you might not even realize you’re helping to 
-                         save the world. Become part of the ReClaim community 
-                         and help us save the world!
-                    </p>
-                    <section className="hero-btn">
-                        <Link to={currentUser? '/marketfeed' : '/signup'}><button >Sign Up!</button></Link>
+                    <div className="hero-word-box">
+                        <p>SHARE RECYCLABLES.</p>
+                        <p>COLLECT RECYCLABLES.</p>
+                        <p>RECLAIM THE EARTH.</p>
+                        <p>SAVE THE WORLD.</p>
+                    </div>
+                    <section className="hero-btn-div">
+                        <Link to={currentUser? '/marketfeed' : '/signup'}><button className="hero-btn">SIGN UP NOW</button></Link>
                     </section>
                 </section>
-                <section className="hero-right">
-                <img src="./images/hero.png" alt="recycling box" />
-                
-                </section>
-                
+                <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
             </section>
-       
-            <div class="custom-shape-divider-top-1649899361">
-                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                 </svg>
-            </div>
+
             {/* How */}
 
             <div className="how" id="howitworks">
@@ -114,17 +100,22 @@ const Home  = () => {
         </div>
 
      {/* Facts */}
-       
+     <div class="custom-shape-divider-bottom-1649956720">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+        <div className="facts">
             <section className="facts-title">
                <h1>Top Recycling Facts</h1>
                <img src="./images/fact.png" alt="facts icon" />
             </section>
             <Slide />
         </div>
-        
+    
      {/* Goal */}
-
-        <div className="goal" id="goal">
+    
+        <div className="goal" id="goal">  
             <section className="goal-title">
                 <h1> Our Goal</h1>
                 <img src="./images/bulb.png" alt="facts icon" />
@@ -149,22 +140,21 @@ const Home  = () => {
         </div>
 
         {/* About */}
-
         <div className="about" id="aboutus">
             <section className="about-box">
                 <h1>About Us</h1>
                 <section className="about-people">
                     <section className="people-box">
-                        <img src="./images/person1.png" alt="person 1" />
-                        <h3>Dan Li</h3>
+                        <img src="./images/person3.png" alt="person 1" />
+                        <h3>Dan Lu</h3>
                     </section>
                     <section className="people-box">
                         <img src="./images/person2.png" alt="person 2" />
-                        <h3>Dan Li</h3>
+                        <h3>Lui Br</h3>
                     </section>
                     <section className="people-box">
                         <img src="./images/person3.png" alt="person 3" />
-                        <h3>Dan Li</h3>
+                        <h3>Josh Lee</h3>
                     </section>
                 </section>
                 <p className="about-founders">

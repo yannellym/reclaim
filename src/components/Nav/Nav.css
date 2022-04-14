@@ -2,7 +2,7 @@
 nav{
     display: inline-block;
     width: 100%;
-    background-color: rgb(250, 246, 234);
+    background-color: rgb(15,30,26);
     font-size: 16px;
   }
   .nav-inner-home, .footer-inner{ 
@@ -11,26 +11,48 @@ nav{
     justify-content: space-around;
     margin: 2% 2%;
   }
+  .info{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    margin: 2% 2%; 
+    font-size: 1.2rem;
+  }
   .link:hover{
-    border-bottom: 2px solid #00a896; 
+    border-bottom: 2px solid var(--green);
   }
  .nav-inner-home >a{
     text-decoration: none;
-    color: rgb(45, 45, 45);
+    color: rgb(255, 255, 255);
+    font-family: var(--marmelad);
   }
 
    /* ----Logo */
   .logo-section-home{
     display:flex;
-    margin-top: -1rem;
+    margin-top: -.3rem;
   }
   .logo-section-home>p{
     font-family: var(--marmelad);
     font-size: 25px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
   }
   .logo-half-home{
-    color: rgb(0, 67, 55);
+    color: rgb(35, 215, 35);
     font-size: 25px;
   }
-  
+  #page-wrap >h1{
+    color: white;
+    display: none;
+  }
+/* Responsiveness */
+
+@media screen and (max-width: 800px){
+
+.info{
+  display:none;
+}
+#ham{
+  display: inline;
+  }
+}

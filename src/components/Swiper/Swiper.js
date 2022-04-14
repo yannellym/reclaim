@@ -13,6 +13,7 @@ import "./styles.css";
 import { EffectCoverflow, Pagination } from "swiper";
 
 export default function Slide() {
+  
   return (
     <>
       <Swiper
@@ -20,6 +21,7 @@ export default function Slide() {
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={"auto"}
+        initialSlide={2}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
