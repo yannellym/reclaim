@@ -17,22 +17,24 @@ html, body{
     margin: 0;
     padding: 0;
     overflow-x: hidden; 
+    background-color: rgba(255, 255, 255, 0.508);
 }
 
 
 /* Hero */
 .hero{
   display: flex;
-  height: 600px;
-  background-color: rgb(240, 240, 240);
+  height: 650px;
+  background-color:  rgb(250, 246, 234);
 }
 .hero-left{
   width:50%;
   padding: 5%;
   line-height: 2.5;
+  font-size: 1rem;
 }
 .hero-btn{
-  margin: 7% auto;
+  margin: 9% auto;
   width: 30%;
 }
 .hero-right{
@@ -44,12 +46,50 @@ html, body{
   padding: 7% 10%;
 }
 
+.custom-shape-divider-top-1649899361 .shape-fill {
+  fill:   rgb(250, 246, 234);
+}
+.custom-shape-divider-top-1649902505 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
 
+.custom-shape-divider-top-2svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 129px;
+}
 
+.custom-shape-divider-top-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-2 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 159px;
+}
+
+.custom-shape-divider-top-2 .shape-fill2 {
+  fill: #FFFFFF;
+}
+COPY HTMLCOPY CSSDOWNLOAD SVG
 /* How */
 .how{
-  height: 54rem;
-  border-top: var(--green) 2px solid;
+  height: 56rem;
+  /* border-top: var(--green) 2px solid; */
+  background-color: rgb(255, 255, 255);
 }
 .how-title{
   display: flex;
@@ -114,8 +154,8 @@ html, body{
 /* Facts */
 
 .facts{
-  background-color: var(--green);
-  height: 750px;
+  background-color: rgb(0, 133, 77);
+  height: 800px;
 }
 .facts-title{
   display:flex;

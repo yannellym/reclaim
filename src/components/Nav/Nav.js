@@ -11,11 +11,11 @@ export default function Nav(){
     return(
         <div>
             <nav>
-                <section className="nav-inner">
+                <section className="nav-inner-home">
                     <Link to='/'>
-                        <section className="logo-section">
+                        <section className="logo-section-home">
                             <img src="../images/reclaim.png" alt="reclaim logo" />
-                            <p><span class="logo-half">Re</span>Claim</p>
+                            <p><span class="logo-half-home">Re</span>Claim</p>
                         </section>
                     </Link>
                     <a href="./#howitworks" className="link">How it works</a>

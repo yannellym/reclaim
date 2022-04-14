@@ -26,15 +26,21 @@ const Home  = () => {
                          and help us save the world!
                     </p>
                     <section className="hero-btn">
-                        <Link to={currentUser? '/marketfeed' : '/signup'}><button className="btn">Sign Up!</button></Link>
+                        <Link to={currentUser? '/marketfeed' : '/signup'}><button >Sign Up!</button></Link>
                     </section>
                 </section>
                 <section className="hero-right">
                 <img src="./images/hero.png" alt="recycling box" />
+                
                 </section>
+                
             </section>
-            
-
+       
+            <div class="custom-shape-divider-top-1649899361">
+                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                 </svg>
+            </div>
             {/* How */}
 
             <div className="how" id="howitworks">
@@ -107,9 +113,8 @@ const Home  = () => {
             </section>
         </div>
 
-
      {/* Facts */}
-        <div className="facts" id="facts">
+       
             <section className="facts-title">
                <h1>Top Recycling Facts</h1>
                <img src="./images/fact.png" alt="facts icon" />

@@ -10,7 +10,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { useAuth, upload, auth } from "../firebaseConfig/firebaseConfig"
 
 
-const Profile= () => {
+const Profile= (  ) => {
     const [display, setDisplay] = useState("");
     const [privacy, setPrivacy] = useState("");
     const [user, setUser] = useState("");
@@ -21,6 +21,7 @@ const Profile= () => {
     const currentUser = useAuth();
     const [email, setEmail] = useState();
     const [name, setName] = useState();
+
     
     const contactInfoDisplay = () => {
         setDisplay(!display)
@@ -70,10 +71,9 @@ const Profile= () => {
             if(currentUser?.photoURL){
             setPhotoURL(currentUser.photoURL)
             setEmail(currentUser.email)
-            setName(currentUser.displayName)
+            setName(currentUser.firstname)
             }
         }, [currentUser, setEmail])
-
 
 
     return (
@@ -110,7 +110,7 @@ const Profile= () => {
                                     <h4>State:</h4>
                                 </section>
                                 <section className="user-inputs">
-                                    <p>{name}</p>
+                                    <p>{name }</p>
                                     <p>{email}</p>
                                     <p>user name</p>
                                     <p>user name</p>

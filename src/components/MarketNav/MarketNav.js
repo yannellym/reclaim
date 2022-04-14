@@ -19,7 +19,7 @@ const [loading, setLoading] = useState(false);
 
     return(
         <div>
-            <nav>
+            <section className="marketnav">
                 <section className="nav-inner">
                     <Link to='/'>
                         <section className="logo-section">
@@ -51,7 +51,7 @@ const [loading, setLoading] = useState(false);
                           <Link to="/login"> <button onClick={ handleLogout}> LOG OUT </button> </Link>
                         </section>
                 </section>
-            </nav>
+            </section>
         </div>
     )
 }

@@ -15,6 +15,7 @@ const Signup = () => {
         email: "",
         password:""
     })
+   
     const [loading, setLoading] = useState(false);
     const currentUser = useAuth();
 

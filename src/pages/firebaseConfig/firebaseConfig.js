@@ -52,15 +52,15 @@ export function useAuth() {
 
 // storage_bucket
 
-// export async function upload (file, currentUser, setLoading) {
-//     const fileRef = ref(storage_bucket, currentUser.uid + '.png');
-//     setLoading(true)
-//     const snapshot = await uploadBytes(fileRef, file);
-//     const photoURL = await getDownloadURL(fileRef);
+export async function upload (file, currentUser, setLoading) {
+    const fileRef = ref(storage_bucket, currentUser.uid + '.png');
+    setLoading(true)
+    const snapshot = await uploadBytes(fileRef, file);
+    const photoURL = await getDownloadURL(fileRef);
 
-//     updateProfile(currentUser, {photoURL})
+    updateProfile(currentUser, {photoURL})
 
-//     setLoading(false)
-//     alert("uploaded File")
-// }
+    setLoading(false)
+    alert("uploaded File, refresh page for changes")
+}
 
