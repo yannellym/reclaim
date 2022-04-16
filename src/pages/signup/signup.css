@@ -24,10 +24,9 @@
 }
 .signup-box{
   margin: 0 auto;
-  max-width: 45%;
-  height: 32rem;
+  max-width: 44%;
+  height: 30rem;
   text-align: center;
-  box-shadow: 1px 0px 5px var(--green);
   background-color: white;
   border-radius: 30px;
   display: flex;
@@ -40,29 +39,32 @@
   color: var(--green); 
 }
 .signup-inputs{
-  width: 80%;
+  width: 70%;
   display: inline-block;
   height: 13rem;
   line-height: 4;
+  outline: rgb(0, 25, 190) solid;
 }
 form{
-  width:90%;
+  width: 100%;
   margin: 0 auto;
+  outline: red solid;
 }
 .info-inputs{
-  width:100%;
+  max-width:100%;
 }
 .info-inputs>input{
-  width: 95%;
-  margin-bottom: 20px;
-  height: 40px;
-  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 50px;
+  border-radius: 8px;
   border: 1px solid gray;
   font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
 }
 .name-inputs{
   display: flex;
-  width:100%;
+  min-width: 400px;
   margin: 0 auto;
   margin-bottom: 2%;
 }

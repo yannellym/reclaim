@@ -24,7 +24,7 @@ const Home  = () => {
                         <Link to={currentUser? '/marketfeed' : '/signup'}><button className="hero-btn">SIGN UP NOW</button></Link>
                     </section>
                 </section>
-                <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
+             
             </section>
 
             {/* How */}
@@ -105,7 +105,7 @@ const Home  = () => {
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
         </svg>
     </div>
-        <div className="facts">
+        <div className="facts" id="facts">
             <section className="facts-title">
                <h1>Top Recycling Facts</h1>
                <img src="./images/fact.png" alt="facts icon" />
@@ -114,8 +114,9 @@ const Home  = () => {
         </div>
     
      {/* Goal */}
-    
+
         <div className="goal" id="goal">  
+        
             <section className="goal-title">
                 <h1> Our Goal</h1>
                 <img src="./images/bulb.png" alt="facts icon" />
@@ -138,9 +139,15 @@ const Home  = () => {
                 who take it with more incentives to do so.
             </p>
         </div>
+        
 
         {/* About */}
         <div className="about" id="aboutus">
+        <div class="custom-shape-divider-top-1650055505">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z" class="shape-fill"></path>
+    </svg>
+</div>
             <section className="about-box">
                 <h1>About Us</h1>
                 <section className="about-people">

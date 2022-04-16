@@ -28,31 +28,36 @@ html, body{
   height: 800px;
   background-color:  rgb(250, 246, 234);
   background-image: url(https://richfieldsplastics.com/wp-content/uploads/2020/08/Encourage-Recycling.jpg);
+  background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
 }
 .hero-left{
-  width:28%;
+  min-width:35%;
   padding: 5%;
   line-height: 2.5;
   font-size: 1.8rem;
   font-family: 'Roboto Slab', serif;
 }
-
-/* Hero Button */
-.hero-btn{
-  margin: 9% auto;
-  width: 55%;
-  margin-left: 13%;
-  font-size: 16px;
-  background-color: red;
-}
-.hero-btn:hover{
-  background-color: var(--green);
-}
 .hero-word-box >p{
   color: rgb(255, 255, 255);
   border-bottom: white solid 2px;
+  font-size:calc(12px + 1.2vw);
 }
+/* Hero Button */
+.hero-btn{
+  margin: 9% auto;
+  width: 50%;
+  margin-left: 13%;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--green);
+  height: 55px;
+}
+.hero-btn:hover{
+  background-color: #ff0000;
+}
+
 
 /* How */
 .how{
@@ -89,7 +94,6 @@ html, body{
   padding-top:2%;
   font-size: 25px;
   border-radius: 10px;
- 
 }
 .how-left>p{
   background-color: var(--blue);
@@ -131,7 +135,7 @@ html, body{
 .facts-title{
   display:flex;
   margin: 0 auto;
-  width: 37%;
+  width: 32%;
   padding-top: 3%;
   font-size: 1.5rem;
   color: white;
@@ -197,7 +201,7 @@ html, body{
 .goal-title{
   display: flex;
   margin: 2% auto;
-  width: 17%;
+  max-width: 17%;
 }
 .goal-title>h1{
   padding-top:2%;
@@ -235,11 +239,31 @@ html, body{
   font-weight: bold;
   font-size:20px;
 }
+.custom-shape-divider-top-1650055505 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1650055505 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-top-1650055505 .shape-fill {
+  fill: #FFFFFF;
+}
+
 /* About */
 
 .about{
   background-color: var(--green);
-  height: 35rem;
+  height: 43rem;
 }
 .about-box{
   width:80%;
@@ -250,6 +274,7 @@ html, body{
   text-align: center;
   padding-top:2%;
   font-size: 30px;
+  color: #ffffff;
 }
 .about-people{
   width: 60%;
@@ -275,3 +300,92 @@ html, body{
 }
 
 
+/* Responsiveness */
+
+/* Tablet */
+@media only screen 
+  and (min-device-width: 600px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .how-title{
+      font-size: 1.3rem;
+      width: 19rem;
+    }  
+    .inner-box-title{
+      height: 2rem;
+      min-width: 8rem;
+      padding-top:2%;
+      font-size: 22px;
+      border-radius: 10px;
+    }
+    .recycle-logo{
+      width:2.9rem;
+      height: 4rem;
+      margin-left: 5%;
+    }
+    .inner-boxes{
+      width: 80%;
+    }
+    .innerbox-img>img{
+      width:80%;
+      height: 50%;
+    }
+    .innerbox-desc{
+      width:60%;
+      margin-left: 4px;
+      font-size: 1rem;
+    }
+    .how-right{
+      border-left: 4px black solid;
+    }
+    
+    /* Facts */
+
+    .facts-title{
+      min-width: 420px;
+      font-size: 1.3rem;
+    }
+
+    /* Goals */
+  
+    .goal-title{
+      min-width: 35%;
+      max-width: 50px;
+    }
+    .goal-circles{
+      min-width: 90%;
+      justify-content: space-around;
+      margin: 4% auto;
+      height: 10rem;
+    }
+    .goal-circles>p{
+      border-radius: 50%;
+      background-color:var(--blue);
+      padding: 3% 2%;
+      text-align: center;
+      line-height: 2;
+      height: 6rem;
+      width:15%;
+      box-shadow: 1px 2px 3px;
+    }
+
+    /* About */
+    .about{
+      height: 46rem;
+    }
+    .about-box{
+      width:80%;
+    }
+    .about-people{
+      width: 90%;
+    }
+    .about-box>p{
+      width: 95%;
+      background-color: #ffffff;
+      padding: 4%;
+      height: 9rem;
+   
+    }
+    
+}

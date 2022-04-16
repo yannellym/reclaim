@@ -89,22 +89,23 @@ const Login = () => {
                         />
                         <section className="login-error">{error}</section>
                         <Link to={currentUser? '/marketfeed' : '/login'}> 
+                      
                             <div>
                             <input
                                 type="submit"
                                 value="Log in"
                                 className="login-button"
-                                
                                 onClick={handleLogin}
                                 >
                             </input>
                             </div>
                         </Link>
-                        <Link to='/marketfeed'><button>Sign In as a guest </button> </Link>
-                    </form>
-                    <section className="login-button-bottom">
+                        <Link to='/marketfeed'><h1 className="guest">Sign In as a guest </h1> </Link>
+                        <section className="login-button-bottom">
                         <p>Don't have an account? <Link to='/signup'><strong class="signup-link"> Sign Up</strong></Link></p>
                     </section>
+                    </form>
+                    
                 </section>
             </div>
             <Footer />

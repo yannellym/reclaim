@@ -25,7 +25,7 @@
   .login-box{
     margin: 0 auto;
     max-width: 45%;
-    height: 28rem;
+    height: 30rem;
     text-align: center;
     box-shadow: 1px 0px 5px var(--green);
     background-color: white;
@@ -37,25 +37,30 @@
   }
   .login-box>h2{
     padding-top: 5%;
+    font-size: 1.8rem;
     color: var(--green); 
   }
+  .login-box>p{
+    margin-top: -10px;
+  }
   form{
-    width: 80%;
-    display: inline;
+    max-width: 65%;
+    display: inline-block;
     height: 10rem;
     line-height: 4;
   }
   form>input{
-    width: 80%;
-    margin-bottom: 5px;
-    height: 40px;
-    border-radius: 5px;
+    min-width: 400px;
+    margin-bottom: 10px;
+    height: 50px;
+    border-radius: 8px;
     border: 1px solid gray;
     padding: 5px;
     font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
   }
-  .login-inputs>input::placeholder{
-    padding-left: 1rem;
+  input::placeholder{
+    padding-left: 5px;
   }
   .login-button{
     padding-top: 3%;
@@ -72,7 +77,11 @@
   .login-error{
     color: red;
   }
-
+  .guest{
+    color: green;
+    margin-top: -15px;
+    font-size: 13px;
+  }
   .already-loggedin {
     display: inline-block;
     width: 100%;
@@ -101,3 +110,13 @@
     padding: 1.5%;
     border-radius: 10px;
   }
+
+  /* Responsiveness */
+
+/* Tablet */
+@media only screen 
+and (min-device-width: 600px) 
+and (max-device-width: 1024px) 
+and (-webkit-min-device-pixel-ratio: 1) {
+
+}

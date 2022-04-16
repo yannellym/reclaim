@@ -24,17 +24,21 @@ export default function Nav(){
                         <a href="./#goal" className="link">Goal</a>
                         <a href="./#aboutus" className="link">About Us</a>
                     </section>
-
-                    <Link to={currentUser? '/marketfeed' : '/login'}> <Button/></Link>
+                    <Link to={currentUser? '/marketfeed' : '/login'}> <Button className="nav-btn" /></Link>
                 </section>
-                <div className="ham">
-                        <Sidebar pageWrapId={"page-wrap"} outerContainerId={"ham"} />
-                             <div id="page-wrap">
-                        <h1>Click to show menu</h1>
-                    </div>
-                    </div>
-                   
-                  
+                
+                <section className="mobile-menu">
+                    <section id="mobile-menu-inner">
+                        <Sidebar pageWrapId={"page-wrap"} outerContainerId={"mobile-menu-inner"} />   
+                        <Link to='/'>
+                            <section className="logo-section-home">
+                                <img src="../images/reclaim.png" alt="reclaim logo" />
+                                <p><span class="logo-half-home">Re</span>Claim</p>
+                            </section>
+                        </Link>
+                        
+                     </section>
+                </section>
             </nav>
            
         </div>

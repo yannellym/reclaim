@@ -11,6 +11,9 @@ nav{
     justify-content: space-around;
     margin: 2% 2%;
   }
+  .mobile-menu{
+    display: none;
+  }
   .info{
     display: flex;
     width: 50%;
@@ -47,12 +50,23 @@ nav{
   }
 /* Responsiveness */
 
-@media screen and (max-width: 800px){
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 600px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
 
-.info{
-  display:none;
-}
-#ham{
-  display: inline;
+  .nav-inner-home{
+    display:none;
+  }
+  .mobile-menu{
+    display: block;
+    height: 6rem;
+  }
+  .mobile-menu-inner{
+    display: flex;
+  }
+  .logo-section-home{
+    padding-top: 1.5%;
   }
 }
