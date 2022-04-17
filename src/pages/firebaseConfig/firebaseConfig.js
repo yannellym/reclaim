@@ -12,13 +12,13 @@ import { useEffect, useState } from "react"
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDZGj-ZvgRblAFSCXjq-pYaX10YGgUTl9Q",
-  authDomain: "reclaim-react.firebaseapp.com",
-  projectId: "reclaim-react",
-  storageBucket: "reclaim-react.appspot.com",
-  messagingSenderId: "1051327382010",
-  appId: "1:1051327382010:web:4d1de7e40a02be6163e443",
-  measurementId: "G-SZJH4T30E1"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
