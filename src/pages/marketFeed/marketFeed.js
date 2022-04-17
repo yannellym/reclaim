@@ -16,9 +16,7 @@ const MarketFeed = () => {
     const [output, setOutput] = useState([]);
     const [details, setDetails] = useState([]);
 
-    const [filterInput, setFilterInput] = useState(false);
-    const [filteredOutput, setFilteredOutput] = useState([]);
-    const [filteredDetails, setFilteredDetails] = useState([]);
+
 
     const getData = async () =>{
         const batchesCol = collection(database, 'batches');

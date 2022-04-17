@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 import React, { useEffect, useState } from "react"
 import { collection, getDocs } from 'firebase/firestore'
 import { database } from "../firebaseConfig/firebaseConfig"
-import Batch from "../../components/Batch/Batch.js"
 import ClaimedBatch from "../..//components/ClaimedBatches/ClaimedBatches.js"
 
 

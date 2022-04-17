@@ -3,19 +3,17 @@ import Nav from "../../components/Nav/Nav"
 import Footer from "../../components/Footer/Footer";
 import "./login.css"
 import React , { useState } from "react"
-import { useAuth, login, app } from "../firebaseConfig/firebaseConfig"
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useAuth, login } from "../firebaseConfig/firebaseConfig"
 
 
 const Login = () => {
-    const provider = new GoogleAuthProvider();
     const [data, setData] = React.useState({
         firstname: "",
         lastname: "",
         email: "",
         password:""
     })
-    const [loading, setLoading] = useState(false);
+
     const [error, setError] = useState('')
     const currentUser = useAuth();
 
@@ -33,7 +31,6 @@ const Login = () => {
             
             setError("please input valid pass")
         }
-        setLoading(false);
     }
 
     // const signin = () =>  {

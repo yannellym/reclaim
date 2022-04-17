@@ -1,7 +1,7 @@
 import Button from "../Button/Button"
 import {Link} from "react-router-dom";
 import "./Nav.css"
-import React, { useState } from "react"
+import React from "react"
 import { useAuth } from "../../pages/firebaseConfig/firebaseConfig"
 import Sidebar from "./Sidebar"
 export default function Nav(){

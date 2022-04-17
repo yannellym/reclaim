@@ -5,7 +5,6 @@ import Slide from "../../components/Swiper/Swiper";
 import "./home.css"
 import React from "react"
 import { useAuth } from "../firebaseConfig/firebaseConfig"
-import SideBar from "../../components/Nav/Sidebar.js"
 import 'animate.css';
 
 const Home  = () => {

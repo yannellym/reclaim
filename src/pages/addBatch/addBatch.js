@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './addBatch.css'
 import { collection, addDoc } from 'firebase/firestore'
 import { database } from "../firebaseConfig/firebaseConfig"
 import Footer from "../../components/Footer/Footer.js"
 import MarketNav from "../../components/MarketNav/MarketNav"
-//import { storage } from "../firebaseConfig/firebaseConfig.js"
 import { storage_bucket } from "../firebaseConfig/firebaseConfig"
-import {ref, uploadBytes, getDownloadURL, listAll } from "firebase/storage"
+import {ref, uploadBytes, getDownloadURL } from "firebase/storage"
 
 export default function AddBatch(){
     
@@ -23,7 +22,7 @@ export default function AddBatch(){
     })
     const [imageUpload, setImageUpload] = useState(null);
     const [imageUrls, setImageUrls] = useState([]);
-    const imagesListRef = ref(storage_bucket, "images/");
+
 
     const [submitted, setSubmitted] = useState(false);
     const [invalid, setInvalid] = useState(false);

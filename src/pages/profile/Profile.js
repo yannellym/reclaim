@@ -9,7 +9,7 @@ import FaxIcon from '@mui/icons-material/Fax';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { useAuth, upload, auth } from "../firebaseConfig/firebaseConfig"
+import { useAuth, upload } from "../firebaseConfig/firebaseConfig"
 import 'animate.css';
 
 
@@ -22,7 +22,6 @@ const Profile= ( ) => {
     const [photo, setPhoto] = useState(null);
     const [loading, setLoading] = useState(false);
     const currentUser = useAuth();
-    const [email, setEmail] = useState();
     const [name, setName] = useState("awesomeUser" + Math.ceil(Math.random()* 100));
 
     

@@ -6,16 +6,12 @@ import MarketSidebar from "../../components/MarketNav/MarketSidebar";
 
 export default function MarketNav(){
 
-const [loading, setLoading] = useState(false);
-
     async function handleLogout() {
         try {
-            setLoading(true);
             await logout();
         } catch {
             alert("Error!");
         }
-        setLoading(false);
     }
 
     return(

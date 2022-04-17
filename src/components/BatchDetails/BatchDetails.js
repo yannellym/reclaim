@@ -12,7 +12,7 @@ export default function BatchDetails(props){
 
 // const [claimed, setClaimed] = useState(props.item.isClaimed)
 const [availability, setAvailability] = useState(props.available) //yes
-const batchesCollectionRef = collection(database, "batches")
+// const batchesCollectionRef = collection(database, "batches")
 const [batchClaimed, setBatchClaimed] = useState(props.isClaimed); //false
 const [imageOfBatch] = useState(props.img.slice(12))
 

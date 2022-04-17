@@ -1,14 +1,13 @@
 import "./batch.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ClaimedButton from "../ClaimedButton/ClaimedButton.js";
 import { collection, doc, updateDoc } from 'firebase/firestore';
 import { database } from "../../pages/firebaseConfig/firebaseConfig";
 
 export default function Batch(props){
     const [hearted, setHearted] = useState(props.item.liked);
-    const batchesCollectionRef = collection(database, "batches");
+    // const batchesCollectionRef = collection(database, "batches");
     const [imageOfBatch] = useState(props.item.img.slice(12));
-    const [imgUrl, setImgUrl] = useState("");
 
     let badgeAvailability;
     let badgeBackground
