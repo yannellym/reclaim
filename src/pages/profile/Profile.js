@@ -7,10 +7,13 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
 import FaxIcon from '@mui/icons-material/Fax';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import { useAuth, upload, auth } from "../firebaseConfig/firebaseConfig"
+import 'animate.css';
 
 
-const Profile= (  ) => {
+const Profile= ( ) => {
     const [display, setDisplay] = useState("");
     const [privacy, setPrivacy] = useState("");
     const [user, setUser] = useState("");
@@ -20,7 +23,7 @@ const Profile= (  ) => {
     const [loading, setLoading] = useState(false);
     const currentUser = useAuth();
     const [email, setEmail] = useState();
-    const [name, setName] = useState();
+    const [name, setName] = useState("awesomeUser" + Math.ceil(Math.random()* 100));
 
     
     const contactInfoDisplay = () => {
@@ -70,17 +73,15 @@ const Profile= (  ) => {
         useEffect(() => {
             if(currentUser?.photoURL){
             setPhotoURL(currentUser.photoURL)
-            setEmail(currentUser.email)
-            setName(currentUser.firstname)
             }
-        }, [currentUser, setEmail])
+        }, [currentUser])
 
 
     return (
         <div>
             <MarketNav/>
             <section className="profile-container">
-                <h1>Welcome, {email} </h1>
+                <h1 class="animate__animated animate__rubberBand"> Welcome 👋  </h1>
                 <section className="profile-section">
                     <div className="left-profile-div">
                         <img src={photoURL} alt="user" />
@@ -100,23 +101,18 @@ const Profile= (  ) => {
                     </div>
                     <div className="right-profile-div">
                         <section className={display ? "contact-info" : "hidden"}>
+                        <h1>Contact Information</h1>
                            <div className="profile-name">
                                 <section className="labels">
-                                    <h4>Name</h4>
+                                    <h4>Username:</h4>
                                     <h4>Email:</h4>
-                                    <h4>Phone Number:</h4>
-                                    <h4>Address:</h4>
-                                    <h4>City:</h4>
-                                    <h4>State:</h4>
                                 </section>
                                 <section className="user-inputs">
-                                    <p>{name }</p>
-                                    <p>{email}</p>
-                                    <p>user name</p>
-                                    <p>user name</p>
-                                    <p>user name</p>
+                                    <p>{name}</p>
+                                    <p>{currentUser?.email}</p>
                                 </section>
                             </div>
+                            <img src="../../images/information.png" className="info-desk" alt="info icon" />
                         </section>
                         <section className={privacy? "privacy-info" : "hidden"} >
                             <ControlledAccordions />
@@ -152,6 +148,7 @@ const Profile= (  ) => {
                                         color: 'red',
                                     }}/>
                                     <p>Phone Number</p>
+                                    <p>(914) 813 - 5425</p>
                                 </div>
                                 <div>
                                     <LocalPostOfficeIcon sx={{
@@ -159,6 +156,7 @@ const Profile= (  ) => {
                                         color: 'red',
                                     }}/>
                                     <p>Mailing Address</p>
+                                    <p>reClaim@outlook.com</p>
                                 </div>
                                 <div>
                                     <FaxIcon sx={{
@@ -166,13 +164,23 @@ const Profile= (  ) => {
                                         color: 'red',
                                     }}/>
                                     <p>Fax Number</p>
+                                    <p>(518) 402 - 8681 </p>
                                 </div>
                                 <div>
                                     <InstagramIcon sx={{
                                         height: 90,
                                         color: 'red',
                                     }}/>
-                                    <p>Social</p>
+                                    <FacebookIcon sx={{
+                                        height: 90,
+                                        color: 'red',
+                                    }}/>
+                                     <TwitterIcon sx={{
+                                        height: 90,
+                                        color: 'red',
+                                    }}/>
+                                    <p>Socials</p>
+                                    <p>@ReclaimTheEarth</p>
                                 </div>
                             </section>
                         </section>

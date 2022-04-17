@@ -66,13 +66,13 @@ const Login = () => {
            
             <div className="login">
                 <section className="login-title">
-                    <p className="login-select">Log In</p>
+                    <p className="login-select">Sign In</p>
                     <p className="signup-unselect"> <Link to='/signup'>Sign Up</Link></p>
                 </section>
                 <section className="login-box">
                     <h2>Welcome Back!</h2>
                     <p>Sign in to get started!</p>
-                    <form> 
+                    <form className="login-form"> 
                         <input
                             type="email"
                             placeholder="Email"
@@ -93,11 +93,10 @@ const Login = () => {
                             <div>
                             <input
                                 type="submit"
-                                value="Log in"
+                                value="Sign In"
                                 className="login-button"
                                 onClick={handleLogin}
-                                >
-                            </input>
+                            />
                             </div>
                         </Link>
                         <Link to='/marketfeed'><h1 className="guest">Sign In as a guest </h1> </Link>

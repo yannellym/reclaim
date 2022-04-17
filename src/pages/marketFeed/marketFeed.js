@@ -1,7 +1,6 @@
 import MarketNav from "../../components/MarketNav/MarketNav"
 import Footer from "../../components/Footer/Footer"
 import "./marketFeed.css"
-import BasicSelect from "../../components/BasicSelect/BasicSelect"
 import Batch from "../../components/Batch/Batch"
 import React, { useEffect, useState } from "react"
 import BatchDetails from "../../components/BatchDetails/BatchDetails" 
@@ -91,7 +90,7 @@ const MarketFeed = () => {
             <section className="logoSearchBox">
                 <div className="market-box">
                     <h1>MarketFeed</h1>
-                    <img src="../images/market.png" alt="market logo" />
+                    <img src="https://img.icons8.com/external-creatype-filed-outline-colourcreatype/64/000000/external-market-e-commerce-creatype-filed-outline-colourcreatype.png" alt="market logo" />
                 </div>
                 <div className="search-box">
                     <div className="bar-box">

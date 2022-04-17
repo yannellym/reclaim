@@ -12,7 +12,7 @@
     margin: 2% 2%;
   }
   .links{
-      font-size: 19px;
+      font-size: 1rem;
   }
  a{
     text-decoration: none;
@@ -51,5 +51,33 @@
   .logo-half{
     color: var(--green);
   }
-  
-  
+
+  .mobile-menu{
+    display: none;
+  }
+
+
+  /* Responsiveness */
+
+/* Portrait and Landscape */
+  @media only screen 
+  and (min-width: 600px) 
+  and (max-width: 991px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .mobile-menu{
+      display: block;
+    }
+    .nav-inner{
+      display: none;
+    }
+  }
+
+
+  @media only screen 
+  and (min-width: 992px) 
+  and (max-width: 1200px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+
+   
+}

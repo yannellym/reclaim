@@ -10,10 +10,10 @@
 }
 .world-box>img{
     height: 4rem;
-    padding-top: 2%;
+    padding: 2%;
 }
 .world-box>p{
-    width: 20rem;
+    min-width: 22rem;
     font-size: 13px;
     padding:2%;
     border: 2px solid rgb(145, 143, 143);
@@ -31,6 +31,7 @@
 .market-box>img{
     width: 80%;
     height: 70%;
+    min-width: 100%;
 }
 
 
@@ -119,3 +120,54 @@
     color: rgb(199, 199, 199);
 }
 
+
+/* Responsiveness */
+
+/* Tablet */
+@media only screen 
+  and (min-width: 600px) 
+  and (max-width: 991px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .market-box>h1 { 
+        font-size: 1rem;
+    }
+    .world-box {
+        display: none; 
+     }
+    .search-box {
+        margin-top: 2%;
+        width: 100%;
+    }
+    .categories > section{
+        margin: 4% 3.5rem;
+    }
+    .categories > section > p {
+        font-size: 1rem;
+        padding: 4%;
+        background-color: rgba(11, 151, 58, 0.768);
+        border-radius: 37px;
+        color: white;
+    }
+    .displayedBadge{
+        border: solid 3px rgb(221, 221, 221);
+        width:35%;
+        margin: 4% 1%;
+        height: 40rem;
+        border-radius: 16px;
+        overflow: scroll;
+    }
+    .badges{
+        width:55%;
+    }
+ }
+
+  @media only screen 
+  and (min-width: 992px) 
+  and (max-width: 1200px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .world-box {
+        display: none; 
+     }
+
+  }

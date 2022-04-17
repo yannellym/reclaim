@@ -2,19 +2,23 @@
     min-height: 720px;
     display: inline-block;
     width: 100%;
-    background: #B2F6FF;
-    background: -webkit-linear-gradient(top, #ffb7b2, #FEFFF5);
-    background: -moz-linear-gradient(top, #B2F6FF, #FEFFF5);
-    background: linear-gradient(to bottom, #b2e9ffb7, #FEFFF5);
+    background-color: #2BC14B;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%2300a430' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+}
+.profile-container > h1{
+    color: white;
+    font-size: 2rem;
+    padding-top: 2%;
 }
 .profile-section {
-    width: 60%;
+    max-width: 60%;
+    min-width: 400px;
     margin: 2% auto;
-    min-height: 600px;
+    min-height: 550px;
     border-radius: 10px; 
     display: flex;
     background-color: white;
-    box-shadow: 1px 2px 2px rgb(156, 156, 156) ;
+    box-shadow: 1px 2px 2px rgb(156, 156, 156);
 }
 .left-profile-div {
     width: 35%;
@@ -58,6 +62,9 @@
     width: 80%;
     margin: 3rem auto;
     border-radius: 10px;
+}
+.contact-info > h1{
+    font-size: 22px;
 }
 .privacy-info {
     height: 80%;
@@ -107,12 +114,16 @@ p
     flex-wrap: wrap;
     gap: 7%;
     text-align: center;
-    padding-left: 6%;
+    padding-left: 1%;
+}
+.help-info >h1{
+    font-size: 20px;
 }
 .help-options >div {
     width: 40%;
+    min-width: 128px;
     background-color: rgba(241, 242, 243, 0.678);
-    box-shadow: 1px 3px 2px gray;
+    box-shadow: 1px 3px 2px rgba(201, 231, 210, 0.549);
     height:40%;
     border-radius: 10px;
 }
@@ -128,4 +139,9 @@ p
     height: 2rem;
     width: 30%;
     margin-right: 15%;
+}
+.info-desk{
+    height: 40%;
+    padding-left: 10%;
+    
 }

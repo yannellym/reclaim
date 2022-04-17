@@ -1,11 +1,17 @@
+
 .claimed-batch { 
     box-shadow: 2px 2px 10px rgb(43, 42, 42);
     width:85%;
-    height:23rem;
+    min-width: 420px;
+    height:25rem;
     margin: 4% auto;
     border-radius: 10px;
     background-color: white;
 }
+.claimed-batch >h1{
+    font-size: 18px;
+    padding-top: 2%;
+} 
 .batch-photo > img{
     margin-top: 20%;
     width: 90%;
@@ -13,4 +19,7 @@
 }
 .pickup{
     color: red;
+}
+.badge-location{
+    min-width:50%;
 }

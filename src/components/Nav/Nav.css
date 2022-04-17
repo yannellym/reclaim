@@ -52,8 +52,8 @@ nav{
 
 /* Portrait and Landscape */
 @media only screen 
-  and (min-device-width: 600px) 
-  and (max-device-width: 1024px) 
+  and (min-width: 600px) 
+  and (max-width: 991px) 
   and (-webkit-min-device-pixel-ratio: 1) {
 
   .nav-inner-home{
@@ -69,4 +69,15 @@ nav{
   .logo-section-home{
     padding-top: 1.5%;
   }
+}
+
+@media only screen 
+  and (min-device-width: 992px) 
+  and (max-device-width: 1200px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .mobile-menu{
+      display: none;
+    }
+   
 }

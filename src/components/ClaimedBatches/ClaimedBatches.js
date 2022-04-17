@@ -10,6 +10,8 @@ export default function ClaimedBatch (props){
     const [availability, setAvailability] = useState(props.available) 
     const [batchClaimed, setBatchClaimed] = useState(props.isClaimed); 
     const [nowAvailable, setNowAvailable] = useState(false)
+    const [imageOfBatch] = useState(props.item.img.slice(12))
+
 
     const [details, setDetails] = useState([]);
 
@@ -45,13 +47,13 @@ export default function ClaimedBatch (props){
     }
 
     return(
-        <div>
+        <div className="claimed-batch-container">
             {nowAvailable ? <h1 className="unclaimedMessage">Batch successfully unclaimed! </h1> :
                 <div className="claimed-batch">
                     <h1>{props.item.title}</h1>
                     <section className="badge-inner">
                         <div className="batch-photo">
-                            <img src={`./images/${props.item.img}`} alt="bottles" />
+                            <img src={`https://firebasestorage.googleapis.com/v0/b/reclaim-react.appspot.com/o/images%2F${imageOfBatch}?alt=media`} alt="recyclable" />
                         </div>
                         <div className="badge-right">
                             <section className="badge-right-first">

@@ -12,6 +12,7 @@
   display: flex;
   margin: 3% auto;
   width: 20%;
+  min-width: 200px;
   font-size: 20px;
   justify-content: space-between;
 }
@@ -24,6 +25,7 @@
 }
 .signup-box{
   margin: 0 auto;
+  min-width: 500px;
   max-width: 44%;
   height: 30rem;
   text-align: center;
@@ -34,21 +36,22 @@
   align-items: center;
   box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
 }
-.signup-box>h2{
-  padding-top: 5%;
+.signup-box>h1{
+  padding-top: 3%;
   color: var(--green); 
 }
+.signup-box>p{
+  margin-top: -5px;
+}
 .signup-inputs{
-  width: 70%;
+  width: 80%;
   display: inline-block;
-  height: 13rem;
+  height: 18rem;
   line-height: 4;
-  outline: rgb(0, 25, 190) solid;
 }
 form{
   width: 100%;
   margin: 0 auto;
-  outline: red solid;
 }
 .info-inputs{
   max-width:100%;
@@ -71,10 +74,10 @@ form{
 .name-inputs>input{
   width: 100%;
   margin-bottom: 5px;
-  height: 40px;
+  height: 45px;
   border-radius: 5px;
   border: 1px solid gray;
-  padding: 5px;
+  padding-left: 4%;
   font-family: 'Inter', sans-serif;
 }
 .first-name{ 
@@ -90,10 +93,14 @@ form{
   text-decoration:none;
   color: rgb(255, 255, 255);
 }
-.signup-button>p>a{
+.signup-btn{
   color:var(--green);
   text-decoration: none;
+  color: white;
+  max-width: 100px;
+  min-height: 35px;
 }
-input[type="text"],[type="password"]{
+input[type="email"],[type="password"],[type="text"]{
   padding-left:4%;
 }
+

@@ -304,8 +304,8 @@ html, body{
 
 /* Tablet */
 @media only screen 
-  and (min-device-width: 600px) 
-  and (max-device-width: 1024px) 
+  and (min-width: 600px) 
+  and (max-width: 991px) 
   and (-webkit-min-device-pixel-ratio: 1) {
 
     .how-title{
@@ -389,3 +389,91 @@ html, body{
     }
     
 }
+
+@media only screen 
+  and (min-width: 992px) 
+  and (max-width: 1200px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .how-title{
+      font-size: 1.3rem;
+      width: 19rem;
+    }  
+    .inner-box-title{
+      height: 2rem;
+      min-width: 8rem;
+      padding-top:2%;
+      font-size: 22px;
+      border-radius: 10px;
+    }
+    .recycle-logo{
+      width:2.9rem;
+      height: 4rem;
+      margin-left: 5%;
+    }
+    .inner-boxes{
+      width: 80%;
+    }
+    .innerbox-img>img{
+      width:80%;
+      height: 50%;
+    }
+    .innerbox-desc{
+      width:60%;
+      margin-left: 4px;
+      font-size: 1rem;
+    }
+    .how-right{
+      border-left: 4px black solid;
+    }
+    
+    /* Facts */
+
+    .facts-title{
+      min-width: 420px;
+      font-size: 1.3rem;
+    }
+
+    /* Goals */
+  
+    .goal-title{
+      min-width: 35%;
+      max-width: 50px;
+    }
+    .goal-circles{
+      min-width: 90%;
+      justify-content: space-around;
+      margin: 4% auto;
+      height: 10rem;
+    }
+    .goal-circles>p{
+      border-radius: 50%;
+      background-color:var(--blue);
+      padding: 3% 2%;
+      text-align: center;
+      line-height: 2;
+      height: 6rem;
+      width:15%;
+      box-shadow: 1px 2px 3px;
+    }
+
+    /* About */
+    .about{
+      height: 46rem;
+    }
+    .about-box{
+      width:80%;
+    }
+    .about-people{
+      width: 90%;
+    }
+    .about-box>p{
+      width: 95%;
+      background-color: #ffffff;
+      padding: 4%;
+      height: rem;
+   
+    }
+    
+
+  }

@@ -1,27 +1,37 @@
-.badge-details{
+
+.desktop-details{
     width:100%;
-    height: 60rem;
+    height: 50rem;
     background-color: #eff8f1;
 }
-.badge-details>h1{
-    margin-top:0;
-    padding-top:3%;
+.desktop-details >h1{
+    margin: 0;
+    padding: 2%;
+    font-size: 1.3rem;
+}
+
+.tablet-badge-details{
+    display: none;
 }
 
 /* Image and location */
-
+.img-location{
+    width: 80%;
+    margin-left: 10%;
+}
 .img-location>img{
-    width:300px;
-    height: 300px;
-    margin-left: 23%;
+    width: 70%;
+    max-height: 300px;
+    min-width: 50%;
+    margin-left: 14%;
 }
 .img-location>section{
     margin: 2% auto;
     display: flex;
-    width:30%;
+    width:80%;
     height: 20px;
 }
-.img-location>section>p{
+.img-location > section > p{
     margin-top: 2%;
     padding-left: 2%;
 }
@@ -40,9 +50,11 @@
 /* Button */
 
 .btn-sec{
-    width:21%;
+    width:40%;
+    height: 40px;
     margin: 0 auto;
     padding-bottom: 3%;
+    padding-left: 10%;
 }
 
 /* Pick up  */
@@ -51,9 +63,15 @@
     width: 85%;
     margin: 0 auto;
 }
+.tablet-info-pickup{
+    display: none;
+}
 .info-pickup>h4{
     text-align: center;
     color: red;
+}
+.pick-up-banner{
+    padding-left: 10%;
 }
 .pickup-containers{
     display: flex;
@@ -80,7 +98,7 @@
     line-height: 2;
     margin: 20px 0 0 10px;
 }
-.info-pickup>p{
+.cancel{
     margin: 2% auto;
     color: #808080;
     border-bottom: 1px solid #808080;
@@ -88,6 +106,60 @@
     font-size: 13px;
     padding-top: 6%;
 }
-.info-pickup>p:hover{
+.cancel:hover{
     color: red;
 }
+
+/* Responsiveness */
+
+/* Tablet */
+@media only screen 
+  and (min-width: 600px) 
+  and (max-width: 991px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .tablet-badge-details{
+        display: inline-block;
+        background-color: #eff8f1;
+        height: 60rem;
+    }
+    .desktop-details{
+        display: none;
+    }
+    .tablet-info-pickup{
+        display: block;
+    }
+    .tablet-info-pickup >h4{
+        padding-left: 3%;
+    }
+    .top-pickup, .bottom-pickup{
+       padding: 3%;
+    }
+    .badge-details >h1{
+        margin: 0;
+        padding: 2%;
+        font-size: 1rem;
+    }
+    .cancel{
+        min-width: 130px;
+    }
+  }
+
+  @media only screen 
+  and (min-width: 992px) 
+  and (max-width: 1200px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .tablet-badge-details{
+        height: 40rem;
+    }
+    .cancel{
+        width: 45%;
+    }
+    .info-pickup{
+        padding-bottom: 2%;
+    }
+    .desktop-details{
+        height: 80rem;
+    }
+  }

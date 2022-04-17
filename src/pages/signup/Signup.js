@@ -18,6 +18,7 @@ const Signup = () => {
    
     const [loading, setLoading] = useState(false);
     const currentUser = useAuth();
+    const [error, setError] = useState('')
 
     const handleInputs = (e) => {
         let inputs ={[e.target.name] : e.target.value}
@@ -27,7 +28,7 @@ const Signup = () => {
         try{
             await signup(data.email, data.password)
         } catch {
-            alert("error!")
+            setError("please input valid email and password")
         }
         setLoading(false);
     }
@@ -37,11 +38,11 @@ const Signup = () => {
             <Nav />
             <div className="signup">
                 <section className="signup-title">
-                    <p className="login-unselect"><Link to='/login'>Login</Link></p>
+                    <p className="login-unselect"><Link to='/login'>Sign in</Link></p>
                     <p className="signup-select">Sign Up</p>
                 </section>
                 <section className="signup-box">
-                    <h2>Welcome to our community!</h2>
+                    <h1>Welcome to our community!</h1>
                     <p>Sign up to get started!</p>
                 <section className="signup-inputs">
                     <form onSubmit={handleSubmit}>
@@ -53,6 +54,7 @@ const Signup = () => {
                                 name="firstname"
                                 className="first-name"
                                 autoComplete="section-name"
+                                required
                             />
                             <input 
                                 type="text"
@@ -60,6 +62,7 @@ const Signup = () => {
                                 name="lastname"
                                 autoComplete="section-additional-name"
                                 onChange={event => handleInputs(event)}
+                                required
                             />
                         </section>
                         <section className="info-inputs">
@@ -69,6 +72,7 @@ const Signup = () => {
                             name="email"
                             autoComplete="section-email"
                             onChange={event => handleInputs(event)}
+                            required
                         />
                             <input 
                                 type="password"
@@ -76,13 +80,15 @@ const Signup = () => {
                                 name="password"
                                 autoComplete="section-current-password"
                                 onChange={event => handleInputs(event)}
+                                required
                             />
                         </section>
-                        <Link to='/marketfeed'> <button disabled={loading || currentUser } onClick={handleSubmit}>Sign up</button></Link>
+                        <section className="login-error">{error}</section>
+                        <Link to={ data.email !== "" && data.password !== ""? '/marketfeed' : '/signup'}> <button className="signup-btn" disabled={loading || currentUser } onClick={handleSubmit}>Sign up</button></Link>
                     </form>
                 </section>
                 <section>
-                    <p>Already have an account? <Link to='/login'><strong class="signup-link"> Login</strong></Link></p>
+                    <p>Already have an account? <Link to='/login'><strong class="signup-link"> Sign in</strong></Link></p>
                 </section>
              </section>
             </div>

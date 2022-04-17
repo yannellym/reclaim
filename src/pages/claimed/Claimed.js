@@ -49,7 +49,7 @@ const Claimed = (props) => {
                         Thank you for claiming these batches and
                         helping to save <br/> the world one recycle at a time!
                     </p>
-                    <img src="../images/earthparty.png" alt="earth party" />
+                    <img src="../images/earth-party.png" alt="earth party" />
                 </section>
             </section>
             <h1>Claimed Batches</h1>

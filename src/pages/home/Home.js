@@ -6,6 +6,8 @@ import "./home.css"
 import React from "react"
 import { useAuth } from "../firebaseConfig/firebaseConfig"
 import SideBar from "../../components/Nav/Sidebar.js"
+import 'animate.css';
+
 const Home  = () => {
     const currentUser = useAuth();
 
@@ -14,7 +16,7 @@ const Home  = () => {
             <Nav />
             <section className="hero">
                 <section className="hero-left">
-                    <div className="hero-word-box">
+                    <div className="hero-word-box animate__animated animate__jackInTheBox">
                         <p>SHARE RECYCLABLES.</p>
                         <p>COLLECT RECYCLABLES.</p>
                         <p>RECLAIM THE EARTH.</p>

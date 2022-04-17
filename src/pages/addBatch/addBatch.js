@@ -36,7 +36,9 @@ export default function AddBatch(){
         setBatches({...batches, ...inputs})
         setImageUpload(e.target.files[0]);
     }
-
+    const invalidInputs = () => {
+        setInvalid(true)
+    }
     const handleSubmit = (event) => {
         setSubmitted(true)
         addDoc(dbInstance, batches)
@@ -71,7 +73,6 @@ export default function AddBatch(){
                         onChange={event => handleInputs(event)}
                     />
                 </div>
-                {invalid&& <span className="err-msg">Please enter a title</span>}
                 <div className="field">
                     <label for="description" >Description:</label>
                     <input 
@@ -83,7 +84,6 @@ export default function AddBatch(){
                         onChange={event => handleInputs(event)} 
                      />
                 </div>
-                {invalid&& <span className="err-msg">Please enter a description</span>}
                 <div className="field">
                     <label for="location">Location:</label>
                     <input 
@@ -95,7 +95,6 @@ export default function AddBatch(){
                         required onChange={event => handleInputs(event)}
                     />
                 </div>
-                {invalid&& <span className="err-msg">Please enter a location</span>}
                 <div className="field">
                     <label for="img">img:</label>
                     <input 
@@ -107,7 +106,6 @@ export default function AddBatch(){
                         
                     />
                 </div>
-                {invalid&&<span className="err-msg">Please upload an image</span>}
                 <div className="field">
                     <label for="available">Available:</label>
                     <input 
@@ -131,7 +129,6 @@ export default function AddBatch(){
                         onChange={event => handleInputs(event)}    
                     /> 
                 </div>
-                {invalid&&<span className="err-msg">Please enter an address</span>}
                 <div className="field">
                     <label for="instructions">Instructions:</label>
                     <input 
@@ -143,10 +140,10 @@ export default function AddBatch(){
                         onChange={event => handleInputs(event)}    
                     /> 
                 </div>
-                {invalid&& <span className="err-msg">Please enter instructions</span>}
             </form>
-            <button onClick={handleSubmit}>Add batch</button>
+            <button onClick={batches.title !== "" && batches.description !== "" && batches.location !== "" ? handleSubmit : invalidInputs} className="addBatch">Submit</button>
             {submitted && <div class='success-message'>Success! Thank you for adding a new batch</div>}
+            {invalid&& <span className="err-msg">Please fill out all the fields</span>}
         </div>
         <Footer />
     </div>

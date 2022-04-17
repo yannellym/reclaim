@@ -16,6 +16,7 @@ const batchesCollectionRef = collection(database, "batches")
 const [batchClaimed, setBatchClaimed] = useState(props.isClaimed); //false
 const [imageOfBatch] = useState(props.img.slice(12))
 
+console.log(imageOfBatch)
 //GOAL: take the item id, and "false" then use this to match it to the item id in the batches
 //collection and set the isClaimed property to the opposite(true)
 const handleClaim = async (id, isClaimed) =>{
@@ -66,49 +67,98 @@ function claimStatus(){
 }
 
 
+
   return(
         <div className="badge-details" onMouseLeave={() => window.location.reload()}>
-           <h1>{props.title}</h1>
-           <section className="img-location">
-                <img src={`https://firebasestorage.googleapis.com/v0/b/reclaim-react.appspot.com/o/images%2F${imageOfBatch}?alt=media`} alt="recyclable" />
-                <section>
-                    <img src="../images/location.png" alt="location" />
-                    <p>{props.location}</p>
-                </section>
-            </section>
-            <section className="description">    
-                <section>
-                    <h4>Description</h4>
-                    <p>{ props.description }</p>
-                </section>
-            </section>
-            <section className="btn-sec">
-                { batchClaimed? <ClaimedButton /> :<button onClick ={ showPickUpDetails }>CLAIM</button>}
-            </section>
-            
-             {batchClaimed?
-            <section className="info-pickup">
-            <hr/>
-                <h4>INFORMATION FOR PICK UP</h4>
-                    <section className="pickup-containers">
-                        <div className="left-pickup">
-                            <h4>Location:</h4>
-                            <h4>Instructions:</h4>
-                        </div>
-                        <div className="right-pickup">
-                            <p className="right-pickup-first">
-                                <img src="../images/location.png" alt="location" />
-                                <p>{props.address}</p>
-                            </p>
-                            <p className="right-pickup-second">
-                                {props.instructions}</p>
-                        </div>
+            <section className="desktop-details">
+                <h1>{props.title}</h1>
+                <section className="img-location">
+                         <img src={`https://firebasestorage.googleapis.com/v0/b/reclaim-react.appspot.com/o/images%2F${props.img.slice(12)}?alt=media`} alt="recyclable" />
+                        <section>
+                            <img src="../images/location.png" alt="location" />
+                            <p>{props.location}</p>
+                        </section>
                     </section>
-                    <p onClick={cancel}>CANCEL PICK UP</p>
+                    <section className="description">    
+                        <section>
+                            <h4>Description</h4>
+                            <p>{ props.description }</p>
+                        </section>
+                    </section>
+                    <section className="btn-sec">
+                        { batchClaimed? <ClaimedButton /> :<button onClick ={ showPickUpDetails }>CLAIM</button>}
+                    </section>
+                    
+                    {batchClaimed?
+                    <section className="info-pickup">
+                    <hr/>
+                        <h4>INFORMATION FOR PICK UP</h4>
+                            <section className="pickup-containers">
+                                <div className="left-pickup">
+                                    <h4>Location:</h4>
+                                    <h4>Instructions:</h4>
+                                </div>
+                                <div className="right-pickup">
+                                    <p className="right-pickup-first">
+                                        <img src="../images/location.png" alt="location" />
+                                        <p>{props.address}</p>
+                                    </p>
+                                    <p className="right-pickup-second">
+                                        {props.instructions}</p>
+                                </div>
+                            </section>
+                            <p onClick={cancel} className="cancel">CANCEL PICK UP</p>
+                    </section>
+                    :
+                    <h3 className="pick-up-banner">Your pick up information will display here</h3>
+                    }
+                </section>
+
+                <section className="tablet-badge-details">
+                <div className="badge-details" onMouseLeave={() => window.location.reload()}>
+                    <h1>{props.title}</h1>
+                    <section className="img-location">
+                            <img src={`https://firebasestorage.googleapis.com/v0/b/reclaim-react.appspot.com/o/images%2F${imageOfBatch}?alt=media`} alt="recyclable" />
+                            <section>
+                                <img src="../images/location.png" alt="location" />
+                                <p>{props.location}</p>
+                            </section>
+                        </section>
+                        <section className="description">    
+                            <section>
+                                <h4>Description</h4>
+                                <p>{ props.description }</p>
+                            </section>
+                        </section>
+                        <section className="btn-sec">
+                            { batchClaimed? <ClaimedButton /> :<button onClick ={ showPickUpDetails }>CLAIM</button>}
+                        </section>
+                        
+                        {batchClaimed?
+                        <section className="tablet-info-pickup">
+                        <hr/>
+                            <h4>INFORMATION FOR PICK UP</h4>
+                            <div className="top-pickup">
+                                <h4>Location:</h4>
+                                <p className="right-pickup-first">
+                                    <img src="../images/location.png" alt="location" />
+                                    <p>{props.address}</p>
+                                </p>
+                            </div>
+                            <div className="bottom-pickup">   
+                                <h4>Instructions:</h4>
+                                <p className="right-pickup-second">
+                                {props.instructions}</p>
+                            </div>
+                              
+                            <p onClick={cancel} className="cancel">CANCEL PICK UP</p>
+                        </section>
+                        :
+                        <h1>Your pick up information will display here</h1>
+                        }
+                </div>  
             </section>
-            :
-            <h1>You pick up information will display here</h1>
-            }
-        </div>     
+
+        </div>  
     )
 }

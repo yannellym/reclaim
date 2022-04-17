@@ -6,7 +6,7 @@ export default function Button(){
         <div>
             <input
                 type="submit"
-                value="Log in"
+                value="Sign In"
                 className="login-button">
             </input>
         </div>     

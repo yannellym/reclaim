@@ -1,0 +1,88 @@
+
+#page-wrap{
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  height: 0;
+  background-color: rgb(2, 107, 9);
+}
+#page-wrap >a{
+  line-height: 3;
+  display: inline-block;
+}
+.bm-menu-wrap {
+  position: fixed;
+  height: 4%;
+}
+
+.bm-item {
+  display: inline-block;
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 30px;
+  color: #ffffff;
+  transition: color 0.2s;
+  font-size: 1.5rem;
+}
+
+.bm-item:hover {
+  color: rgb(244, 244, 244);
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #10b804;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #fefefe;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: rgb(2, 136, 2);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  width: 95%;
+}
+
+/* Wrapper for item list */
+#page-wrap {
+  color: #0011f8;
+}
+#page-wrap > section {
+  line-height: 3;
+  font-size: 25px;
+}
+
+#page-wrap > section > img{
+  height: 30px;
+  padding-right: 5%;
+}
+#page-wrap > section > a:hover{
+ color: rgb(6, 175, 6);
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 800px){
+
+}
