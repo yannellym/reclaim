@@ -1,0 +1,14 @@
+
+.notfound-container{
+    margin: 0 auto;
+    width: 45%;
+    background-color: rgb(44, 127, 182);
+    padding: 5%;
+}
+
+.notfound-container > img{
+    height: 50%;
+    padding-top: 3%;
+    width: 80%;
+    padding-left: 5%;
+}

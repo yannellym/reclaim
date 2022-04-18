@@ -4,6 +4,7 @@ import "./Nav.css"
 import React from "react"
 import { useAuth } from "../../pages/firebaseConfig/firebaseConfig"
 import Sidebar from "./Sidebar"
+
 export default function Nav(){
 
     const currentUser = useAuth();

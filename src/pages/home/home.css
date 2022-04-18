@@ -302,12 +302,23 @@ html, body{
 
 /* Responsiveness */
 
+@media only screen 
+  and (min-width: 300px) 
+  and (max-width: 599px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .available-version{
+      display: none;
+    }
+  }
+
 /* Tablet */
 @media only screen 
   and (min-width: 600px) 
   and (max-width: 991px) 
   and (-webkit-min-device-pixel-ratio: 1) {
-
+    .available-version{
+      display: block;
+    }
     .how-title{
       font-size: 1.3rem;
       width: 19rem;
@@ -474,6 +485,5 @@ html, body{
       height: rem;
    
     }
-    
 
   }

@@ -28,6 +28,7 @@
     width:100%;
     height:100%;
     border-radius: 10px;
+    padding-top: 0;
 }
 .badge-right{
     width:63%;
@@ -130,7 +131,6 @@ button{
      font-size: 0.75rem;
  }
  .badge-left >img{
-     padding-top: 15%;
      max-height: 80%;
  }
 }

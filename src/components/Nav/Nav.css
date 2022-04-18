@@ -51,6 +51,7 @@ nav{
 /* Responsiveness */
 
 /* Portrait and Landscape */
+
 @media only screen 
   and (min-width: 600px) 
   and (max-width: 991px) 
@@ -72,8 +73,8 @@ nav{
 }
 
 @media only screen 
-  and (min-device-width: 992px) 
-  and (max-device-width: 1200px) 
+  and (min-width: 992px) 
+  and (max-width: 1200px) 
   and (-webkit-min-device-pixel-ratio: 1) {
 
     .mobile-menu{
@@ -81,3 +82,4 @@ nav{
     }
    
 }
+

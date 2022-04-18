@@ -8,6 +8,7 @@ import Profile from './pages/profile/Profile';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import React from "react"
 import AddBatch from './pages/addBatch/addBatch.js'
+import NotFound from './pages/notFound/notFound.js'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/addbatch" component={AddBatch} />
+            <Route path="*" component={NotFound} />
           </Switch>
        </div>
 

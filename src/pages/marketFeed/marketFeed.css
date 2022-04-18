@@ -94,7 +94,8 @@
 .badges{
     width:48%;
     margin: 4% 2%;
-    height: 40rem;
+    padding-bottom: 2%;
+    height: 43rem;
     overflow: scroll;
 }
 .badges::-webkit-scrollbar, .displayedBadge::-webkit-scrollbar {
