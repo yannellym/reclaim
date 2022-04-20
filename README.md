@@ -1,75 +1,99 @@
 # ReClaim
 
-Project Demo: https://reclaim-react.firebaseapp.com/
+<img src="https://media.giphy.com/media/Rr4o5Ckre2Z8sCpR0d/giphy.gif" alt="ReClaim" height="100%" /> <br/>
+Project Demo: https://reclaim-react.firebaseapp.com/  <br/>
+Project Social Media Promotion: https://www.linkedin.com/feed/update/urn:li:activity:6922179239895023616/
 
-# Getting Started with Create React App
+## Table of Contents
+1. [Overview](#Overview)
+2. [Product Spec](#Product-Spec)
+3. [Wireframes](#Wireframes)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Overview
+### Description
+ReClaim is an exclusive marketplace for people to trade, collect, and post recyclable goods in NYC. You get to help the earth and get some cool recyclable goods at the same time.
 
-In the project directory, you can run:
+### App Evaluation
+- **Category:** Social Networking / Recycling
+- **Desktop:** This app is primarily developed for desktop, it is similar to Meta's marketplace. A mobile version is expected later on this year.
+- **Story:** Users can trade, collect, and post recyclable goods in NYC. 
+- **Market:** Any individual could choose to use this app, and to keep it a safe environment. It is focused on invidiuals that want to keep the earth clean and care about recycling. 
+- **Habit:** This app could be used as often as the user wants. It depends on how much they care about the environment, and what exactly they're looking for.
+- **Scope:** The first step is to roll it out in NYC. Analyze how people interact, and how much they recycle. Then, the goal would be to expand to different states. An addition to the product would be a community forum. 
 
-### `npm start`
+## Product Spec
+### 1. User Stories 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Required Must-have Stories**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* User logs in to access the MarketPlace.
+* User searches recyclables by location or browses through the feed (think Indeed).
+* Claimed Batches have a page dedicated to them where you can unclaim if needed.
+* Liked Batches have a page dedicated to them where you can unlike if needed.
+* Profile pages for each user
 
-### `npm test`
+**Optional Nice-to-have Stories**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* More information about each user
+* How many batches they have claimed thus far
+* Community forum to interact with other users
+* Badges/levels to reward users
 
-### `npm run build`
+### 2. Screen Archetypes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Login 
+* Register - User signs up or logs into their account
+   * Upon Download/Reopening of the application, the user is prompted to log in to gain access to their profile information to access the MarketPlace.
+* MarketPlace - User is able to browse through the marketplace of recyclables. 
+   * They can search by lcoation, claimed, and liked.
+* Profile Screen 
+   * Allows user to upload a photo of themselves.
+* Liked Screen.
+   * Allows user to see what batches they have liked.
+* Claimed Screen.
+   * Allows user to see what batches they have claimed.
+* Upload Screen.
+   * Allows user to upload batches of their own.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Navigation
 
-### `npm run eject`
+**Tab Navigation** 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Home
+* MarketFeed
+* Liked Batches
+* Claimed Batches
+* Upload Batch
+* Profile
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Flow Navigation** (Screen to Screen)
+* Log-in /Sign up -> Account creation if no log in is available
+* MarketFeed -> Jumps to all available batches
+* Liked batches -> batches that have been liked
+* Claimed batches -> batches that have been claimed
+* Upload batches -> option to upload batch
+* * Profile -> Profile photo to be uploaded 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Wireframes
 
-## Learn More
+Figma prototype: https://www.figma.com/proto/7jKN0e9W72IBTZunEVyg63/ReClaim?node-id=350%3A405&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A6
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Screen Shot 2022-04-20 at 5 37 25 PM](https://user-images.githubusercontent.com/91508647/164327111-5fc52654-3472-4798-89ff-d1c016118c2c.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Digital Wireframes & Mockups
+<i![Screen Shot 2022-04-20 at 5 36 27 PM](https://user-images.githubusercontent.com/91508647/164327156-af12cec2-ea17-4f51-9698-1aa40bcf6243.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### Interactive Prototype
+<img src="https://media.giphy.com/media/hfK3Zy5mwFj5SMW58o/giphy.gif" width=200>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Design Systems
+![Screen Shot 2022-04-20 at 5 38 30 PM](https://user-images.githubusercontent.com/91508647/164327263-886cbd35-1736-469f-8760-c4ae5d4e12e9.png)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# reclaim
